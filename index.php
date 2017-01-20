@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h1>Titulo de la encuesta</h1>
+	<p>Instrucciones: En cada pregunta darle click a alguna alternativa y ver lo que pasa</p>
 	<div class="pregunta" id="p1">
 		<div class="enunciado">
 			<label for="">Pregunta numero 1</label>
