@@ -18,11 +18,11 @@
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
-				<li><label for="" class="alternativa" data-pregunta="p1">a) alternativa --------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p1">b) alternativa -----</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p1">c) alternativa --------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p1">d) alternativa ---------------------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p1">e) alternativa ---------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p1" data-indice="a">a) alternativa --------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p1" data-indice="b">b) alternativa -----</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p1" data-indice="c">c) alternativa --------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p1" data-indice="d">d) alternativa ---------------------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p1" data-indice="e">e) alternativa ---------</label></li>
 			</ul>
 		</div>
 	</div>
@@ -32,11 +32,11 @@
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
-				<li><label for="" class="alternativa" data-pregunta="p2">a) alternativa --</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p2">b) alternativa - </label></li>
-				<li><label for="" class="alternativa" data-pregunta="p2">c) alternativa --------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p2">d) alternativa ---</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p2">e) alternativa ----</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="a">a) alternativa --</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="b">b) alternativa - </label></li>
+				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="c">c) alternativa --------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="d">d) alternativa ---</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="e">e) alternativa ----</label></li>
 			</ul>
 		</div>
 	</div>
@@ -46,13 +46,16 @@
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
-				<li><label for="" class="alternativa" data-pregunta="p3">a) alternativa ------------------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p3">b) alternativa --------</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p3">c) alternativa --</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p3">d) alternativa --</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p3">e) alternativa ------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p3" data-indice="a">a) alternativa ------------------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p3" data-indice="b">b) alternativa --------</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p3" data-indice="c">c) alternativa --</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p3" data-indice="d">d) alternativa --</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p3" data-indice="e">e) alternativa ------</label></li>
 			</ul>
 		</div>
 	</div>
+
+	<button id="boton">Ver Respuestas</button>
+	<div><p>Las respuestas marcadas se ven en la consola del navegador</p></div>
 </body>
 </html>
