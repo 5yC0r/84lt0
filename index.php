@@ -75,5 +75,6 @@
 
 	<button id="boton">Ver Respuestas</button>
 	<div><p>Las respuestas marcadas se ven en la consola del navegador</p></div>
+	<div id="resultado"></div>
 </body>
 </html>
