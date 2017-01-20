@@ -28,7 +28,7 @@
 	</div>
 	<div class="pregunta" id="p2">
 		<div class="enunciado">
-			<label for="">Pregunta numero 2</label>
+			<label for="">Pregunta numero 2 (si se da click en la alternativa (b) se mostrará una pregunta adicional)</label>
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
@@ -39,10 +39,28 @@
 				<li><label for="" class="alternativa" data-pregunta="p2" data-indice="e">e) alternativa ----</label></li>
 			</ul>
 		</div>
+
+		<div class="pregunta-adicional" id="p2-1">
+			<div class="condicion">
+				<p>Su respuesta a la pregunta anterior fue la alternativa B, responda adicionalmente la siguiente pregunta:</p>
+			</div>
+			<div class="enunciado">
+				<label for="">Pregunta adicional de la pregunta 2</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p2-1" data-indice="a">a) alternativa --</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p2-1" data-indice="b">b) alternativa - </label></li>
+					<li><label for="" class="alternativa" data-pregunta="p2-1" data-indice="c">c) alternativa --------</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p2-1" data-indice="d">d) alternativa ---</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p2-1" data-indice="e">e) alternativa ----</label></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	<div class="pregunta" id="p3">
 		<div class="enunciado">
-			<label for="">Pregunta numero</label>
+			<label for="">Pregunta numero 3</label>
 		</div>
 		<div class="grupo-alternativas">
 			<ul>

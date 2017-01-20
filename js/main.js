@@ -8,6 +8,17 @@ $(document).ready(function () {
 		});
 		$(this).css('color','red');
 		$(this).attr("data-seleccionado","true");
+
+		var alternativa = $(this).data('indice');
+
+		console.log("numero pregunta: "+numeroPregunta+" - indice: "+alternativa);
+		
+		if(numeroPregunta == 'p2' && alternativa == 'b'){
+			$("#"+numeroPregunta+" .pregunta-adicional").show();
+		}else{
+			$("#"+numeroPregunta+" .pregunta-adicional").hide();
+		}
+
 	});
 
 	$('#boton').click(function(){
@@ -16,4 +27,6 @@ $(document).ready(function () {
 			console.log($(this).data('pregunta')+" - "+$(this).data('indice'));
 		});
 	});
+
+
 });
