@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	$('.alternativa').click(function(){
+	$('.pregunta .alternativa').click(function(){
 		var numeroPregunta = $(this).data('pregunta');
 		$("#"+numeroPregunta+" .grupo-alternativas li label").each(function(){
 			$(this).attr("data-seleccionado","false");
@@ -45,5 +45,19 @@ $(document).ready(function () {
 		});
 
 
+	});
+
+	$('.pregunta-alternativa-multiple .alternativa').on( "click", function(){
+
+		var seleccionado = $(this).data('seleccionado');
+
+		if(seleccionado == "no"){
+			$(this).attr("data-seleccionado","si");
+			$(this).css('color','green');
+		}
+		if(seleccionado == "si"){
+			$(this).attr("data-seleccionado","no");
+			$(this).css('color','black');
+		}
 	});
 });
