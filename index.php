@@ -85,7 +85,7 @@
 		<div class="grupo-alternativas">
 			<ul>
 				<li><label for="" class="alternativa" data-pregunta="p5" data-indice="a">a) Si.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p5" data-indice="b">b) false.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p5" data-indice="b">b) No.</label></li>
 			</ul>
 		</div>
 	</div>
@@ -130,7 +130,7 @@
 				<li><label for="" class="alternativa" data-pregunta="p8" data-indice="b">b) No.</label></li>
 			</ul>
 		</div>
-		<div class="pregunta-adicional" id="p8-1" data-head="a">
+		<div class="pregunta-alternativa-multiple pregunta-adicional" id="p8-1" data-head="a">
 			<div class="enunciado">
 				<label for="">Usted se ha capacidado profesionalmente en: (puede marcar más de una opcion)</label>
 			</div>
@@ -179,7 +179,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta" id="p11">
+	<div class="pregunta-alternativa-simple" id="p11">
 		<div class="enunciado">
 			<label for="">11. ¿Usted se desenvuelve desarrollando labores exclusivas del cirujano dentista?</label>
 		</div>
@@ -198,8 +198,8 @@
 			<ul>
 				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="a">a) Independiente.</label></li>
 				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="b">b) Dependiente.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="">c) Dependiente e independiente.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="b">d) Desempleado.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="c">c) Dependiente e independiente.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p12" data-indice="d">d) Desempleado.</label></li>
 			</ul>
 		</div>
 
@@ -266,7 +266,7 @@
 			<ul>
 				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="a">a) Medio Urbano.</label></li>
 				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="b">b) Medio Rural.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="b">c) Medio Urbano Marginal.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="c">c) Medio Urbano Marginal.</label></li>
 			</ul>
 		</div>
 	</div>
@@ -294,7 +294,7 @@
 			<ul>
 				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="a">a) Satisfecho.</label></li>
 				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="b">b) Medianamente satisfecho.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="b">c) Nada satisfecho.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="c">c) Nada satisfecho.</label></li>
 			</ul>
 		</div>
 	</div>

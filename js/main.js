@@ -11,13 +11,13 @@ $(document).ready(function () {
 		$(this).attr("data-seleccionado","true"); 		// se cambia atributo data-seleccionado -> true
 	});
 
-	//Caso ´2: Pregunta alternativa compuesta
+	//Caso 2: Pregunta alternativa compuesta
 	$('.pregunta-alternativa-multiple .alternativa').on( "click", function(){
 
 		var seleccionado = $(this).data('seleccionado');
 
 		if(seleccionado == false){
-			$(this).attr("data-seleccionado","true");		// no funciona para cambiar internamente, solo de forma visual
+			$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
 			$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
 			$(this).css('color','green');
 		}else{
@@ -37,8 +37,18 @@ $(document).ready(function () {
 			$(this).css("color","gray");				//se cambia de color las alternativas
 		});
 
-		$(this).css('color','red'); 					//se cambia color la alternativa seleccionada
+		$(this).css('color','red');						//se cambia color la alternativa seleccionada
 		$(this).attr("data-seleccionado","true"); 		// se cambia atributo data-seleccionado -> true
+
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		/*Pregunta compuesta - alternativa simple*/
+		
+		/*Pregunta compuesta - alternativa multiple*/
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 		//La funcionalidad es la siguiente: en una pregunta compuesta, las de "abajo" dependen de la de "arriba", especificamente de la alternativa que se seleccione.
 		//Si la seleccionada es la letra "a" entonces se deberan mostrar (*) las siguientes preguntas que guarden relacion con esta alternativa
@@ -63,6 +73,14 @@ $(document).ready(function () {
 	});
 
 	//Caso 4: Pregunta con respuesta tipeada
+
+	//Evento de boton para guardar los datos de la encuesta
+	$('#boton').click(function(){
+		$(".grupo-alternativas li label[data-seleccionado=true]").each(function(){
+			$(this).css("color","blue");
+			console.log($(this).data('pregunta')+" - "+$(this).data('indice'));
+		});
+	});
 
 	/*
 	$('.pregunta .alternativa').click(function(){
