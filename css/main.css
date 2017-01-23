@@ -2,6 +2,6 @@ li{
 	list-style: none;
 }
 .pregunta-adicional{
-	/*display: none;*/
+	display: none;
 	margin-left: 40px;
 }
