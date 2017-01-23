@@ -44,7 +44,7 @@
 		<div class="enunciado">
 			<label for="">3. ¿Cuál es el área de interés para su capacitación profesional? (Puede marcar más de una opción)</label>
 		</div>
-		<div class="grupo-alternativas">
+		<div class="grupo-alternativas-pregunta-multiple">
 			<ul>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="a">a) Cirugía Bucal y Maxilofacial.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="b">b) Endodoncia.</label></li>
@@ -134,12 +134,12 @@
 			<div class="enunciado">
 				<label for="">Usted se ha capacidado profesionalmente en: (puede marcar más de una opcion)</label>
 			</div>
-			<div class="grupo-alternativas">
+			<div class="grupo-alternativas-pregunta-multiple">
 				<ul>
-					<li><label for="" class="alternativa" data-pregunta="p8-1" data-indice="a">a) Cursos de larga duración y/o diplado.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p8-1" data-indice="b">b) Maestría.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p8-1" data-indice="c">c) Doctorado.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p8-1" data-indice="d">d) Especialidad.</label></li>
+					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p8-1" data-indice="a">a) Cursos de larga duración y/o diplado.</label></li>
+					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p8-1" data-indice="b">b) Maestría.</label></li>
+					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p8-1" data-indice="c">c) Doctorado.</label></li>
+					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p8-1" data-indice="d">d) Especialidad.</label></li>
 				</ul>
 			</div>
 		</div>
@@ -168,7 +168,7 @@
 		<div class="enunciado">
 			<label for="">10. ¿Cuál es el area del ejercicio profesional que desempeña? (Puede marcar más de una opción)</label>
 		</div>
-		<div class="grupo-alternativas">
+		<div class="grupo-alternativas-pregunta-multiple">
 			<ul>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="a">a) Asistencial.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="b">b) Docencia.</label></li>
@@ -203,11 +203,11 @@
 			</ul>
 		</div>
 
-		<div class="pregunta-adicional-aternativa-simple" id="p12-1" data-head="b">
+		<div class="pregunta-adicional-alternativa-simple" id="p12-1" data-head="b">
 			<div class="enunciado">
 				<label for="">Como trabajador dependiente, ¿En cuánto tiempo después de egresado consiguió trabajo?</label>
 			</div>
-			<div class="grupo-alternativas">
+			<div class="grupo-alternativas-pregunta-simple">
 				<ul>
 					<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="a">a) Menos de 1 año.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="b">b) Entre 1 y 2 años.</label></li>
@@ -217,11 +217,11 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional-aternativa-simple" id="p12-2" data-head="b">
+		<div class="pregunta-adicional-alternativa-simple" id="p12-2" data-head="b">
 			<div class="enunciado">
 				<label for="">¿Usted cómo consiguió trabajo de cirujano dentista dependiente?</label>
 			</div>
-			<div class="grupo-alternativas">
+			<div class="grupo-alternativas-pregunta-simple">
 				<ul>
 					<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="a">a) Recomendaciones Personales.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="b">b) Acceso por concurso.</label></li>
@@ -231,11 +231,11 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional-aternativa-simple" id="p12-3" data-head="b">
+		<div class="pregunta-adicional-alternativa-simple" id="p12-3" data-head="b">
 			<div class="enunciado">
 				<label for="">¿Cuál fue el grado de dificultad para conseguir empleo como dependiente?</label>
 			</div>
-			<div class="grupo-alternativas">
+			<div class="grupo-alternativas-pregunta-simple">
 				<ul>
 					<li><label for="" class="alternativa" data-pregunta="p12-3" data-indice="a">a) Mucha Dificultad.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p12-3" data-indice="b">b) Alguna Dificultad.</label></li>
@@ -244,11 +244,11 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional-aternativa-simple" id="p12-4" data-head="a">
+		<div class="pregunta-adicional-alternativa-simple" id="p12-4" data-head="a">
 			<div class="enunciado">
 				<label for="">Como trabajador independiente, ¿En cuánto tiempo comenzó a tener ingresos?</label>
 			</div>
-			<div class="grupo-alternativas">
+			<div class="grupo-alternativas-pregunta-simple">
 				<ul>
 					<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="a">a) Menos de 1 año.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="b">b) Entre 1 y 2 años.</label></li>
