@@ -36,7 +36,6 @@ $(document).ready(function () {
 			$(this).attr("data-seleccionado","false");	//se cambia atributo data-seleccionado -> false						
 			$(this).css("color","gray");				//se cambia de color las alternativas
 		});
-
 		$(this).css('color','red');						//se cambia color la alternativa seleccionada
 		$(this).attr("data-seleccionado","true"); 		// se cambia atributo data-seleccionado -> true
 
@@ -44,8 +43,36 @@ $(document).ready(function () {
 		///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		/*Pregunta compuesta - alternativa simple*/
-		
+		$("#"+numeroPregunta+" .pregunta-adicional-alternativa-simple")each(function(){
+			var subordinante = $(this).data("head");
+			console.log("pregunta compuesta alternativa simple");
+			if(alternativa == subordinante){
+				$(this).show();
+			}else{
+				var numeroPreguntaAdicional = $(this).attr('id');	// (**)
+				$("#"+numeroPreguntaAdicional+" .grupo-alternativas li label[data-pregunta="+numeroPreguntaAdicional+"]").each(function(){ 		
+					$(this).attr("data-seleccionado","false");					
+					$(this).css("color","black");				
+				});
+				$(this).hide();
+			}
+		});
 		/*Pregunta compuesta - alternativa multiple*/
+
+		$("#"+numeroPregunta+" pregunta-adicional-alternativa-multiple")each(function(){
+			var subordinante = $(this).data("head");
+			console.log("pregunta compuesta alternativa multiple");
+			if(alternativa == subordinante){
+				$(this).show();
+			}else{
+				var numeroPreguntaAdicional = $(this).attr('id');	// (**)
+				$("#"+numeroPreguntaAdicional+" .grupo-alternativas li label[data-pregunta="+numeroPreguntaAdicional+"]").each(function(){ 		
+					$(this).attr("data-seleccionado","false");					
+					$(this).css("color","black");				
+				});
+				$(this).hide();
+			}
+		});
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,7 +83,7 @@ $(document).ready(function () {
 		//Sim embargo, suponiendo que se eliga la letra "a" y que de esta dependan otras preguntas, el usuario ve la(s) pregunta(s) ocultas y marca una alternativa,
 		//pero decide luego cambiar la letra "a" inicial por la "b" y que de esta tambien dependen otras preguntas. 
 		//Entonces se debera hacer que las preguntas de la alternativa "a" vuelvan a su estado original y no generar conflictos. (**)
-
+		/*
 		$("#"+numeroPregunta+" .pregunta-adicional").each(function(){ 		
 			var adicional = $(this).data("head");
 			if(alternativa == adicional){
@@ -69,7 +96,7 @@ $(document).ready(function () {
 				});
 				$(this).hide();
 			}
-		});
+		});*/
 	});
 
 	//Caso 4: Pregunta con respuesta tipeada

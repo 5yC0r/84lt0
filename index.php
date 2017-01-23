@@ -130,7 +130,7 @@
 				<li><label for="" class="alternativa" data-pregunta="p8" data-indice="b">b) No.</label></li>
 			</ul>
 		</div>
-		<div class="pregunta-alternativa-multiple pregunta-adicional" id="p8-1" data-head="a">
+		<div class="pregunta-adicional-alternativa-multiple" id="p8-1" data-head="a">
 			<div class="enunciado">
 				<label for="">Usted se ha capacidado profesionalmente en: (puede marcar más de una opcion)</label>
 			</div>
@@ -203,7 +203,7 @@
 			</ul>
 		</div>
 
-		<div class="pregunta-adicional" id="p12-1" data-head="b">
+		<div class="pregunta-adicional-aternativa-simple" id="p12-1" data-head="b">
 			<div class="enunciado">
 				<label for="">Como trabajador dependiente, ¿En cuánto tiempo después de egresado consiguió trabajo?</label>
 			</div>
@@ -217,7 +217,7 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional" id="p12-2" data-head="b">
+		<div class="pregunta-adicional-aternativa-simple" id="p12-2" data-head="b">
 			<div class="enunciado">
 				<label for="">¿Usted cómo consiguió trabajo de cirujano dentista dependiente?</label>
 			</div>
@@ -231,7 +231,7 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional" id="p12-3" data-head="b">
+		<div class="pregunta-adicional-aternativa-simple" id="p12-3" data-head="b">
 			<div class="enunciado">
 				<label for="">¿Cuál fue el grado de dificultad para conseguir empleo como dependiente?</label>
 			</div>
@@ -244,7 +244,7 @@
 			</div>
 		</div>
 
-		<div class="pregunta-adicional" id="p12-4" data-head="a">
+		<div class="pregunta-adicional-aternativa-simple" id="p12-4" data-head="a">
 			<div class="enunciado">
 				<label for="">Como trabajador independiente, ¿En cuánto tiempo comenzó a tener ingresos?</label>
 			</div>
