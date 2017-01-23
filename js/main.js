@@ -100,9 +100,9 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.pregunta-adicional-alternativa-simple .alternativa').click(function(){
+	$('.pregunta-adicional-alternativa-simple .grupo-alternativas-pregunta-simple .alternativa').click(function(){
 		var numeroPregunta = $(this).data('pregunta'); //se obtiene numero de pregunta
-		$("#"+numeroPregunta+" .grupo-alternativas li label").each(function(){ 	
+		$("#"+numeroPregunta+" .grupo-alternativas-pregunta-simple  li label").each(function(){ 	
 			$(this).attr("data-seleccionado","false");	//se cambia de color las alternativas						
 			$(this).css("color","gray");				//se cambia atributo data-seleccionado -> true
 		});
