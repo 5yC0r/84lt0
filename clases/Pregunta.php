@@ -7,6 +7,8 @@
 		private $idPregunta;
 		private $idRespuesta;
 
+		private $respuestaTipeada;
+
 		private $con;
 
 		//Metodos
@@ -28,6 +30,11 @@
         	return true;
         }
 
+        public function crearpt(){
+        	$sql = "INSERT INTO pregunta (idPregunta, respuestaTipeada) VALUES ('{$this->idPregunta}','{$this->respuestaTipeada}')";
+        	$this->con->consultaSimple($sql);
+        	return true;
+        }
 	}
 
 ?>

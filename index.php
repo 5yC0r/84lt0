@@ -62,7 +62,7 @@
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="n">n) Odontogeriatría.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="o">o) Auditoría Odontológica.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="p">p) Administración y Gestión en Estomatología.</label></li>
-				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="q">q) Ninguna.</label></li>
+				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p3" data-indice="q" data-ninguna="si">q) Ninguna.</label></li>
 			</ul>
 		</div>
 	</div>
@@ -116,7 +116,7 @@
 				<label for="">Explique a continuación el motivo por el cuál no se tituló y de por terminada la encuesta.</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="text">
+				<input type="text" data-pregunta="p7-1" value="">
 			</div>
 		</div>
 	</div>
@@ -160,7 +160,7 @@
 				<label for="">¿Cuál es el motivo por el que no ejerce la profesión?</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="text">
+				<input type="text" data-pregunta="p9-1" value="">
 			</div>
 		</div>
 	</div>
@@ -175,7 +175,7 @@
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="c">c) Investigación.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="d">d) Odontología legal y forense.</label></li>
 				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="e">e) Administración.</label></li>
-				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="e">f) Promoción de la salud.</label></li>
+				<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="f">f) Promoción de la salud.</label></li>
 			</ul>
 		</div>
 	</div>
@@ -275,7 +275,7 @@
 			<label for="">16. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion?</label>
 		</div>
 		<div class="respuesta-tipeada">
-			<input type="number">
+			<input type="number" step="any" data-pregunta="p16">
 		</div>
 	</div>
 	<div class="pregunta-respuesta-tipeada" id="p17">
@@ -283,7 +283,7 @@
 			<label for="">17. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista?</label>
 		</div>
 		<div class="respuesta-tipeada">
-			<input type="number">
+			<input type="number" step="any" data-pregunta="p17">
 		</div>
 	</div>
 	<div class="pregunta-alternativa-simple" id="p18">

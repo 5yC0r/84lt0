@@ -17,5 +17,13 @@
             $resultado = $this->pregunta->crear();
             return $resultado;
         }
+
+        public function crearpt($idPregunta, $respuestaTipeada){
+            $this->pregunta->set("idPregunta",$idPregunta);
+            $this->pregunta->set("respuestaTipeada",$respuestaTipeada);
+
+            $resultado = $this->pregunta->crearpt();
+            return $resultado;
+        }
     }
 ?>

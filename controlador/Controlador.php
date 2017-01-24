@@ -3,9 +3,9 @@
 	$idPregunta=$_POST["pregunta"];
     $idRespuesta=$_POST["respuesta"];
 
-    $controladorPregunta = new ControladorPregunta();
+    //$controladorPregunta = new ControladorPregunta();
 
-    $r = $controladorPregunta->crear($idPregunta,$idRespuesta);
+    //$r = $controladorPregunta->crear($idPregunta,$idRespuesta);
 
-    echo $r;
-?>
+    echo $idPregunta."+".$idRespuesta;
+?

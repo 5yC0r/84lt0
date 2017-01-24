@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () {  
 
 	//Caso 1: Pregunta alternativa simple
 	$('.pregunta-alternativa-simple .alternativa').click(function(){
@@ -14,16 +14,35 @@ $(document).ready(function () {
 	//Caso 2: Pregunta alternativa multiple
 	$('.pregunta-alternativa-multiple .alternativa').on( "click", function(){
 
-		var seleccionado = $(this).data('seleccionado');
+		var numeroPregunta = $(this).data('pregunta'); 		// obtnemos el valor de la pregunta
+		var opcionNinguna = $(this).data('ninguna'); 		// verificamos si la opcion seleccionada es ninguna
 
-		if(seleccionado == false){
+		var seleccionado = $(this).data('seleccionado'); 	// obtenemos el valor del atributo data-seleccionado de la opcion elegida
+
+		if(opcionNinguna == "si"){							// si la opcion ninguna ha sido seleccionada, solo dejamos esa y el resto las desactivamos
+			$("#"+numeroPregunta+" .grupo-alternativas-pregunta-multiple li label").each(function(){
+				$(this).attr("data-seleccionado","false");
+				$(this).data("seleccionado",false);
+				$(this).css('color','black');
+			});
 			$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
 			$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
 			$(this).css('color','green');
 		}else{
-			$(this).attr("data-seleccionado","false");
-			$(this).data("seleccionado",false);
-			$(this).css('color','black');
+			// si se ha elegido cualquier otra opcion menos ninguna, "desactivamos" la opcion ninguna y asignamos el atributo data-seleccionado=false
+			$("#"+numeroPregunta+" .grupo-alternativas-pregunta-multiple li label[data-ninguna=si]").attr("data-seleccionado","false");
+			$("#"+numeroPregunta+" .grupo-alternativas-pregunta-multiple li label[data-ninguna=si]").data("seleccionado",false);
+			$("#"+numeroPregunta+" .grupo-alternativas-pregunta-multiple li label[data-ninguna=si]").css('color','black');
+
+			if(seleccionado == false){
+				$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
+				$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
+				$(this).css('color','green');
+			}else{
+				$(this).attr("data-seleccionado","false");
+				$(this).data("seleccionado",false);
+				$(this).css('color','black');
+			}	
 		}
 	});
 
@@ -46,8 +65,16 @@ $(document).ready(function () {
 		$("#"+numeroPregunta+" .pregunta-adicional").each(function(){ 		
 			var adicional = $(this).data("head");
 			if(alternativa == adicional){
+				var numeroPreguntaAdicional = $(this).attr('id');								
+				$("#"+numeroPreguntaAdicional+" .respuesta-tipeada input").each(function(){ 		
+					$(this).val("");	//valor vacio para la caja de texto al mostrarse									
+				});
 				$(this).show();
 			}else{
+				var numeroPreguntaAdicional = $(this).attr('id');
+				$("#"+numeroPreguntaAdicional+" .respuesta-tipeada input").each(function(){ 		
+					$(this).val("");	//valor vacio para la caja de texto al ocultarse								
+				});
 				$(this).hide();
 			}
 		});
@@ -114,9 +141,50 @@ $(document).ready(function () {
 
 	//Evento de boton para guardar los datos de la encuesta
 	$('#boton').click(function(){
-		$(".grupo-alternativas li label[data-seleccionado=true],.grupo-alternativas-pregunta-simple li label[data-seleccionado=true]").each(function(){
+		$(".grupo-alternativas li label[data-seleccionado=true], .grupo-alternativas-pregunta-simple li label[data-seleccionado=true], .grupo-alternativas-pregunta-multiple li label[data-seleccionado=true]").each(function(){
 			$(this).css("color","blue");
+			var numeroPregunta = $(this).data('pregunta');
+			var respuesta = $(this).data('indice');
 			console.log($(this).data('pregunta')+" - "+$(this).data('indice'));
+			var parametros = {
+				"pregunta" : numeroPregunta,
+				"respuesta" : respuesta
+			}
+			$.ajax({
+	                data:  parametros,
+	                url:   'controlador/Controlador.php',
+	                type:  'post',
+	                beforeSend: function () {
+	                        $("#resultado").html("Procesando, espere por favor...");
+	                },
+	                success:  function (response) {
+	                        $("#resultado").html(response);
+	                }
+	        });
 		});
+
+		//Para guardar respuesta(s) de pregunta(s) tipeada
+		$(".pregunta-respuesta-tipeada .respuesta-tipeada input, .pregunta-adicional .respuesta-tipeada input").each(function(){
+			var numeroPregunta = $(this).data('pregunta');
+			var contenidoRespuesta = $(this).val();
+			if(contenidoRespuesta!=""){		//solo se toma en cuenta las cajas de texto que tengan algo de contenido
+				console.log(numeroPregunta +"-"+contenidoRespuesta);
+				var parametros = {
+					"pregunta" : numeroPregunta,
+					"respuesta" : contenidoRespuesta
+				}
+				$.ajax({
+		                data:  parametros,
+		                url:   'controlador/Controlador.php',
+		                type:  'post',
+		                beforeSend: function () {
+		                        $("#resultado").html("Procesando, espere por favor...");
+		                },
+		                success:  function (response) {
+		                        $("#resultado").html(response);
+		                }
+		        });
+			}
+		});	
 	});
 });
