@@ -25,7 +25,7 @@
         }
 
         public function crear(){
-        	$sql = "INSERT INTO pregunta (idPregunta, idRespuesta) VALUES ('{$this->idPregunta}','{$this->idRespuesta}')";
+        	$sql = "INSERT INTO pregunta (idPregunta, respuesta) VALUES ('{$this->idPregunta}','{$this->idRespuesta}')";
         	$this->con->consultaSimple($sql);
         	return true;
         }
@@ -34,6 +34,11 @@
         	$sql = "INSERT INTO pregunta (idPregunta, respuestaTipeada) VALUES ('{$this->idPregunta}','{$this->respuestaTipeada}')";
         	$this->con->consultaSimple($sql);
         	return true;
+        }
+        public function listar(){
+            $sql = "SELECT * FROM pregunta";
+            $resultado = $this->con->consultaRetorno($sql);
+            return $resultado;
         }
 	}
 

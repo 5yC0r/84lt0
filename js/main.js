@@ -147,6 +147,7 @@ $(document).ready(function () {
 			var respuesta = $(this).data('indice');
 			console.log($(this).data('pregunta')+" - "+$(this).data('indice'));
 			var parametros = {
+				"indice": 0,
 				"pregunta" : numeroPregunta,
 				"respuesta" : respuesta
 			}
@@ -170,6 +171,7 @@ $(document).ready(function () {
 			if(contenidoRespuesta!=""){		//solo se toma en cuenta las cajas de texto que tengan algo de contenido
 				console.log(numeroPregunta +"-"+contenidoRespuesta);
 				var parametros = {
+					"indice": 1,
 					"pregunta" : numeroPregunta,
 					"respuesta" : contenidoRespuesta
 				}
@@ -186,5 +188,24 @@ $(document).ready(function () {
 		        });
 			}
 		});	
+	});
+
+
+	$('#btnTraer').click(function(){
+		var parametros = {"indice": 1}
+			$.ajax({
+	                data:  parametros,
+	                url:   'controlador/Controlador.php',
+	                type:  'post',
+	                success:  function (response) {
+	    				var datos = $.parseJSON(response); 
+                   		console.log(datos);
+                   		var numeroFilas = datos.length;
+                   		for (var i = 0; i < numeroFilas; i++) {
+                   			$("#"+datos[i].idPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
+                   			$("#"+datos[i].idPregunta+" ul li label[data-indice="+datos[i].respuesta+"][data-pregunta="+datos[i].idPregunta+"]").css('color','purple');
+                   		}
+	                }
+	        });
 	});
 });

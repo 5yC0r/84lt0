@@ -25,5 +25,10 @@
             $resultado = $this->pregunta->crearpt();
             return $resultado;
         }
+
+        public function listar(){
+            $resultado = $this->pregunta->listar();
+            return $resultado;
+        }
     }
 ?>
