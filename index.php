@@ -258,48 +258,49 @@
 			</div>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p15">
+	<div class="pregunta-alternativa-simple" id="p13">
 		<div class="enunciado">
-			<label for="">15. ¿Dónde es el medio en el que desarrolla la profesión?</label>
+			<label for="">13. ¿Dónde es el medio en el que desarrolla la profesión?</label>
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
-				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="a">a) Medio Urbano.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="b">b) Medio Rural.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p15" data-indice="c">c) Medio Urbano Marginal.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p13" data-indice="a">a) Medio Urbano.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p13" data-indice="b">b) Medio Rural.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p13" data-indice="c">c) Medio Urbano Marginal.</label></li>
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-respuesta-tipeada" id="p16">
+	<div class="pregunta-respuesta-tipeada" id="p14">
 		<div class="enunciado">
-			<label for="">16. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion?</label>
+			<label for="">14. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion?</label>
 		</div>
 		<div class="respuesta-tipeada">
-			<input type="number" step="any" data-pregunta="p16">
+			<input type="number" step="any" data-pregunta="p14">
 		</div>
 	</div>
-	<div class="pregunta-respuesta-tipeada" id="p17">
+	<div class="pregunta-respuesta-tipeada" id="p15">
 		<div class="enunciado">
-			<label for="">17. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista?</label>
+			<label for="">15. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista?</label>
 		</div>
 		<div class="respuesta-tipeada">
-			<input type="number" step="any" data-pregunta="p17">
+			<input type="number" step="any" data-pregunta="p15">
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p18">
+	<div class="pregunta-alternativa-simple" id="p16">
 		<div class="enunciado">
-			<label for="">18.¿Cuál es el grado de satisfacción con el ingreso medio recibido como cirujano dentista?</label>
+			<label for="">16.¿Cuál es el grado de satisfacción con el ingreso medio recibido como cirujano dentista?</label>
 		</div>
 		<div class="grupo-alternativas">
 			<ul>
-				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="a">a) Satisfecho.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="b">b) Medianamente satisfecho.</label></li>
-				<li><label for="" class="alternativa" data-pregunta="p18" data-indice="c">c) Nada satisfecho.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p16" data-indice="a">a) Satisfecho.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p16" data-indice="b">b) Medianamente satisfecho.</label></li>
+				<li><label for="" class="alternativa" data-pregunta="p16" data-indice="c">c) Nada satisfecho.</label></li>
 			</ul>
 		</div>
 	</div>
 
 	<button id="boton">Ver Respuestas</button>
+	<button id="btnTraer">Traer respuestas base datos</button>
 	<div><p>Las respuestas marcadas se ven en la consola del navegador</p></div>
 	<div id="resultado"></div>
 </body>
