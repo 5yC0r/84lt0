@@ -1,10 +1,10 @@
 <?php
-	include('../controlador/ControladorPregunta.php');
-
+	
 	$indice = $_POST["indice"];
 
 	if($indice == 0){
 		//regitrar respuestas en la base de datos
+		include 'ControladorPregunta.php';
 		$numeroPregunta=$_POST["pregunta"];
 	    $respuestaPregunta=$_POST["respuesta"];
 	    $controladorPregunta = new ControladorPregunta();
@@ -12,6 +12,7 @@
 	    //echo $numeroPregunta."+".$respuestaPregunta;
 	}else{
 		if($indice == 1){
+			include 'ControladorPregunta.php';
 			$numeroPregunta=$_POST["pregunta"];
 		    $respuestaPregunta=$_POST["respuesta"];
 		    $controladorPregunta = new ControladorPregunta();
@@ -19,6 +20,7 @@
 		}else{
 			if($indice == 2){
 				//traer respuestas de la base de datos (preguntas con alernativa)
+				include 'ControladorPregunta.php';
 				$controladorPregunta = new ControladorPregunta();
 				$resultado = $controladorPregunta->listar();
 				$filas = array();
@@ -31,6 +33,7 @@
 			}else{
 				if($indice == 3){
 					//traer respuestas de la base de datos (preguntas tipeadas)
+					include 'ControladorPregunta.php';
 					$controladorPregunta = new ControladorPregunta();
 					$resultado = $controladorPregunta->listarpt();
 					$filas = array();
@@ -44,6 +47,7 @@
 				else{
 					if($indice == 4){
 						//traer respuestas de la base de datos (preguntas tipeadas)
+						include 'ControladorUsuario.php';
 						$controladorUsuario = new ControladorUsuario();
 						$resultado = $controladorUsuario->listar();
 						$filas = array();
@@ -58,5 +62,4 @@
 			}
 		}
 	}
-
 ?>

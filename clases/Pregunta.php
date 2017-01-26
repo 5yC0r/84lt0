@@ -8,7 +8,7 @@
 		private $respuestaPregunta;
 
 		private $respuestaTipeada;
-
+ 
 		private $con;
 
 		//Metodos
