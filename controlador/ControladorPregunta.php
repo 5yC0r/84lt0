@@ -10,16 +10,16 @@
             $this->pregunta = new Pregunta();
         }
         
-        public function crear($idPregunta, $idRespuesta){
-        	$this->pregunta->set("idPregunta",$idPregunta);
-        	$this->pregunta->set("idRespuesta",$idRespuesta);
+        public function crear($numeroPregunta, $respuestaPregunta){
+        	$this->pregunta->set("numeroPregunta",$numeroPregunta);
+        	$this->pregunta->set("respuestaPregunta",$respuestaPregunta);
 
             $resultado = $this->pregunta->crear();
             return $resultado;
         }
 
-        public function crearpt($idPregunta, $respuestaTipeada){
-            $this->pregunta->set("idPregunta",$idPregunta);
+        public function crearpt($numeroPregunta, $respuestaTipeada){
+            $this->pregunta->set("numeroPregunta",$numeroPregunta);
             $this->pregunta->set("respuestaTipeada",$respuestaTipeada);
 
             $resultado = $this->pregunta->crearpt();
@@ -28,6 +28,11 @@
 
         public function listar(){
             $resultado = $this->pregunta->listar();
+            return $resultado;
+        }
+
+        public function listarpt(){
+            $resultado = $this->pregunta->listarpt();
             return $resultado;
         }
     }

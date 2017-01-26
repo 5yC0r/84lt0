@@ -150,7 +150,7 @@ $(document).ready(function () {
 				"indice": 0,
 				"pregunta" : numeroPregunta,
 				"respuesta" : respuesta
-			}
+			};
 			$.ajax({
 	                data:  parametros,
 	                url:   'controlador/Controlador.php',
@@ -174,7 +174,7 @@ $(document).ready(function () {
 					"indice": 1,
 					"pregunta" : numeroPregunta,
 					"respuesta" : contenidoRespuesta
-				}
+				};
 				$.ajax({
 		                data:  parametros,
 		                url:   'controlador/Controlador.php',
@@ -192,7 +192,7 @@ $(document).ready(function () {
 
 
 	$('#btnTraer').click(function(){
-		var parametros = {"indice": 1}
+		var parametros = {"indice": 2};
 			$.ajax({
 	                data:  parametros,
 	                url:   'controlador/Controlador.php',
@@ -202,10 +202,24 @@ $(document).ready(function () {
                    		console.log(datos);
                    		var numeroFilas = datos.length;
                    		for (var i = 0; i < numeroFilas; i++) {
-                   			$("#"+datos[i].idPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
-                   			$("#"+datos[i].idPregunta+" ul li label[data-indice="+datos[i].respuesta+"][data-pregunta="+datos[i].idPregunta+"]").css('color','purple');
+                   			$("#"+datos[i].numeroPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
+                   			$("#"+datos[i].numeroPregunta+" ul li label[data-indice="+datos[i].respuestaPregunta+"][data-pregunta="+datos[i].numeroPregunta+"]").css('color','purple');
                    		}
 	                }
 	        });
+	    var parametrosrt = {"indice":3};
+	    	$.ajax({
+	    		data:  parametrosrt,
+                url:   'controlador/Controlador.php',
+                type:  'post',
+                success: function(response){
+                	var datos = $.parseJSON(response);
+                	console.log(datos);
+                	var numeroFilas = datos.length;
+                	for (var i = 0; i < numeroFilas; i++) {
+                		$("#"+datos[i].numeroPregunta+" .respuesta-tipeada input").val(datos[i].respuestaPregunta);
+                	}
+                }
+	    	});
 	});
 });

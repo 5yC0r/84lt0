@@ -5,22 +5,42 @@
 
 	if($indice == 0){
 		//regitrar respuestas en la base de datos
-		$idPregunta=$_POST["pregunta"];
-	    $idRespuesta=$_POST["respuesta"];
+		$numeroPregunta=$_POST["pregunta"];
+	    $respuestaPregunta=$_POST["respuesta"];
 	    $controladorPregunta = new ControladorPregunta();
-	    $r = $controladorPregunta->crear($idPregunta,$idRespuesta);
-	    //echo $idPregunta."+".$idRespuesta;
+	    $r = $controladorPregunta->crear($numeroPregunta,$respuestaPregunta);
+	    //echo $numeroPregunta."+".$respuestaPregunta;
 	}else{
-		//traer respuestas de la base de datos
-		$controladorPregunta = new ControladorPregunta();
-		$resultado = $controladorPregunta->listar();
-		$filas = array();
-		$i=0;
-		while($r = mysqli_fetch_assoc($resultado)){
-			$filas[$i] = $r;
-			$i++;
+		if($indice == 1){
+			$numeroPregunta=$_POST["pregunta"];
+		    $respuestaPregunta=$_POST["respuesta"];
+		    $controladorPregunta = new ControladorPregunta();
+	    	$r = $controladorPregunta->crearpt($numeroPregunta,$respuestaPregunta);
+		}else{
+			if($indice == 2){
+				//traer respuestas de la base de datos (preguntas con alernativa)
+				$controladorPregunta = new ControladorPregunta();
+				$resultado = $controladorPregunta->listar();
+				$filas = array();
+				$i=0;
+				while($r = mysqli_fetch_assoc($resultado)){
+					$filas[$i] = $r;
+					$i++;
+				}
+				echo json_encode($filas);
+			}else{
+				//traer respuestas de la base de datos (preguntas tipeadas)
+				$controladorPregunta = new ControladorPregunta();
+				$resultado = $controladorPregunta->listarpt();
+				$filas = array();
+				$i=0;
+				while($r = mysqli_fetch_assoc($resultado)){
+					$filas[$i] = $r;
+					$i++;
+				}
+				echo json_encode($filas);
+			}
 		}
-		echo json_encode($filas);
 	}
 
 ?>

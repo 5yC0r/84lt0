@@ -4,8 +4,8 @@
 
 	class Pregunta{
 		//Atributos
-		private $idPregunta;
-		private $idRespuesta;
+		private $numeroPregunta;
+		private $respuestaPregunta;
 
 		private $respuestaTipeada;
 
@@ -25,18 +25,23 @@
         }
 
         public function crear(){
-        	$sql = "INSERT INTO pregunta (idPregunta, respuesta) VALUES ('{$this->idPregunta}','{$this->idRespuesta}')";
+        	$sql = "INSERT INTO pregunta (numeroPregunta, respuestaPregunta) VALUES ('{$this->numeroPregunta}','{$this->respuestaPregunta}')";
         	$this->con->consultaSimple($sql);
         	return true;
         }
 
         public function crearpt(){
-        	$sql = "INSERT INTO pregunta (idPregunta, respuestaTipeada) VALUES ('{$this->idPregunta}','{$this->respuestaTipeada}')";
+        	$sql = "INSERT INTO preguntart (numeroPregunta, respuestaPregunta) VALUES ('{$this->numeroPregunta}','{$this->respuestaTipeada}')";
         	$this->con->consultaSimple($sql);
         	return true;
         }
         public function listar(){
             $sql = "SELECT * FROM pregunta";
+            $resultado = $this->con->consultaRetorno($sql);
+            return $resultado;
+        }
+        public function listarpt(){
+            $sql = "SELECT * FROM preguntart";
             $resultado = $this->con->consultaRetorno($sql);
             return $resultado;
         }
