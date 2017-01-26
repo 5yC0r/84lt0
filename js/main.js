@@ -222,4 +222,34 @@ $(document).ready(function () {
                 }
 	    	});
 	});
+
+	$("#botonListar").click(function(){
+		var parametros = {"indice": 4};
+        $.ajax({
+            data: parametros,
+            url : 'controlador/Controlador.php',
+            type : 'post',
+            success:  function (response) {
+                   var datos = $.parseJSON(response); 
+                   console.log(datos);
+                   var numeroFilas = datos.length;
+                   var contenedorTabla = $('#contenedor-tabla');
+                   contenedorTabla.html("<table align='center' border='1'>"+
+                    "<thead>"+
+                    	"<tr>"+
+		                    "<th>Codigo Usuario</th>"+
+							"<th>Nombre(s) Usuario</th>"+
+							"<th>Apellidos Usuario</th>"+
+                    	"</tr>"+
+                    "</thead>"+
+                    "<tbody id='cuerpoTabla'></tbody>"+
+                    "</table>");
+                    var cuerpoTabla = $('#cuerpoTabla');
+                    for (var i = 0; i < numeroFilas; i++) {
+                        cuerpoTabla.append('<tr><td>'+datos[i].codUsuario+'</td><td>'+datos[i].nombreUsuario+'</td><td>'+datos[i].apellidosUsuario+'</td></tr>');
+                    }
+                    
+            }
+        });
+	});
 });

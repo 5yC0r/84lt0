@@ -29,16 +29,32 @@
 				}
 				echo json_encode($filas);
 			}else{
-				//traer respuestas de la base de datos (preguntas tipeadas)
-				$controladorPregunta = new ControladorPregunta();
-				$resultado = $controladorPregunta->listarpt();
-				$filas = array();
-				$i=0;
-				while($r = mysqli_fetch_assoc($resultado)){
-					$filas[$i] = $r;
-					$i++;
+				if($indice == 3){
+					//traer respuestas de la base de datos (preguntas tipeadas)
+					$controladorPregunta = new ControladorPregunta();
+					$resultado = $controladorPregunta->listarpt();
+					$filas = array();
+					$i=0;
+					while($r = mysqli_fetch_assoc($resultado)){
+						$filas[$i] = $r;
+						$i++;
+					}
+					echo json_encode($filas);
 				}
-				echo json_encode($filas);
+				else{
+					if($indice == 4){
+						//traer respuestas de la base de datos (preguntas tipeadas)
+						$controladorUsuario = new ControladorUsuario();
+						$resultado = $controladorUsuario->listar();
+						$filas = array();
+						$i=0;
+						while($r = mysqli_fetch_assoc($resultado)){
+							$filas[$i] = $r;
+							$i++;
+						}
+						echo json_encode($filas);
+					}
+				}
 			}
 		}
 	}
