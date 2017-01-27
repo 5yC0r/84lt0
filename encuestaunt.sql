@@ -1,27 +1,31 @@
--- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.5.0.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1    Database: encuestaunt
--- ------------------------------------------------------
--- Server version	5.5.5-10.0.17-MariaDB
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-01-2017 a las 06:44:49
+-- Versión del servidor: 10.0.17-MariaDB
+-- Versión de PHP: 5.6.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `alumno`
+-- Base de datos: `encuestaunt`
 --
 
-DROP TABLE IF EXISTS `alumno`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno`
+--
+
 CREATE TABLE `alumno` (
   `dniAlumno` int(8) NOT NULL,
   `nombres` varchar(20) DEFAULT NULL,
@@ -33,134 +37,136 @@ CREATE TABLE `alumno` (
   `direccion` varchar(50) DEFAULT NULL,
   `año_egreso` int(4) DEFAULT NULL,
   `telefono` varchar(10) DEFAULT NULL,
-  `correo_electronico` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`dniAlumno`)
+  `correo_electronico` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `alumno`
+-- Estructura de tabla para la tabla `cuenta`
 --
 
-LOCK TABLES `alumno` WRITE;
-/*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
-/*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cuenta`
---
-
-DROP TABLE IF EXISTS `cuenta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cuenta` (
   `idcuenta` int(11) NOT NULL,
   `usuario` int(8) DEFAULT NULL,
-  `password` int(8) DEFAULT NULL,
-  PRIMARY KEY (`idcuenta`)
+  `password` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `cuenta`
+-- Estructura de tabla para la tabla `pregunta`
 --
 
-LOCK TABLES `cuenta` WRITE;
-/*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pregunta`
---
-
-DROP TABLE IF EXISTS `pregunta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pregunta` (
-  `codPregunta` int(11) NOT NULL AUTO_INCREMENT,
+  `codPregunta` int(11) NOT NULL,
   `numeroPregunta` varchar(8) DEFAULT NULL,
-  `dniAlumno` int(8) NOT NULL,
-  PRIMARY KEY (`codPregunta`),
-  KEY `fk_pregunta_alumno1_idx` (`dniAlumno`),
-  CONSTRAINT `fk_pregunta_alumno1` FOREIGN KEY (`dniAlumno`) REFERENCES `alumno` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `dniAlumno` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `pregunta`
+-- Estructura de tabla para la tabla `preguntart`
 --
 
-LOCK TABLES `pregunta` WRITE;
-/*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `preguntart`
---
-
-DROP TABLE IF EXISTS `preguntart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `preguntart` (
-  `codPreguntart` int(11) NOT NULL AUTO_INCREMENT,
+  `codPreguntart` int(11) NOT NULL,
   `numeroPregunta` varchar(8) DEFAULT NULL,
   `respuestaPregunta` varchar(10) DEFAULT NULL,
-  `dniAlumno` int(8) NOT NULL,
-  PRIMARY KEY (`codPreguntart`),
-  KEY `fk_preguntart_alumno_idx` (`dniAlumno`),
-  CONSTRAINT `fk_preguntart_alumno` FOREIGN KEY (`dniAlumno`) REFERENCES `alumno` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `dniAlumno` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `preguntart`
+-- Estructura de tabla para la tabla `respuesta`
 --
 
-LOCK TABLES `preguntart` WRITE;
-/*!40000 ALTER TABLE `preguntart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `preguntart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `respuesta`
---
-
-DROP TABLE IF EXISTS `respuesta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuesta` (
-  `codRespuesta` int(11) NOT NULL AUTO_INCREMENT,
+  `codRespuesta` int(11) NOT NULL,
   `letraRespuesta` varchar(3) DEFAULT NULL,
-  `codPregunta` int(11) NOT NULL,
-  PRIMARY KEY (`codRespuesta`),
-  KEY `fk_respuesta_pregunta1_idx` (`codPregunta`),
-  CONSTRAINT `fk_respuesta_pregunta1` FOREIGN KEY (`codPregunta`) REFERENCES `pregunta` (`codPregunta`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `codPregunta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `respuesta`
+-- Índices para tablas volcadas
 --
 
-LOCK TABLES `respuesta` WRITE;
-/*!40000 ALTER TABLE `respuesta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `respuesta` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD PRIMARY KEY (`dniAlumno`);
 
 --
--- Dumping routines for database 'encuestaunt'
+-- Indices de la tabla `cuenta`
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+ALTER TABLE `cuenta`
+  ADD PRIMARY KEY (`idcuenta`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indices de la tabla `pregunta`
+--
+ALTER TABLE `pregunta`
+  ADD PRIMARY KEY (`codPregunta`),
+  ADD KEY `fk_pregunta_alumno1_idx` (`dniAlumno`);
+
+--
+-- Indices de la tabla `preguntart`
+--
+ALTER TABLE `preguntart`
+  ADD PRIMARY KEY (`codPreguntart`),
+  ADD KEY `fk_preguntart_alumno_idx` (`dniAlumno`);
+
+--
+-- Indices de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  ADD PRIMARY KEY (`codRespuesta`),
+  ADD KEY `fk_respuesta_pregunta1_idx` (`codPregunta`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `pregunta`
+--
+ALTER TABLE `pregunta`
+  MODIFY `codPregunta` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `preguntart`
+--
+ALTER TABLE `preguntart`
+  MODIFY `codPreguntart` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  MODIFY `codRespuesta` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `pregunta`
+--
+ALTER TABLE `pregunta`
+  ADD CONSTRAINT `fk_pregunta_alumno1` FOREIGN KEY (`dniAlumno`) REFERENCES `alumno` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `preguntart`
+--
+ALTER TABLE `preguntart`
+  ADD CONSTRAINT `fk_preguntart_alumno` FOREIGN KEY (`dniAlumno`) REFERENCES `alumno` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  ADD CONSTRAINT `fk_respuesta_pregunta1` FOREIGN KEY (`codPregunta`) REFERENCES `pregunta` (`codPregunta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2017-01-27  0:39:40
