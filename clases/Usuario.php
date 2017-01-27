@@ -4,8 +4,8 @@
 	class Usuario{
 		//Atributos
 		private $codUsuario;
-		private $nomreUsuario;
-		private $apellidosUsurio;
+		private $nombreUsuario;
+		private $apellidosUsuario;
 
 		private $con;
 
