@@ -8,9 +8,6 @@ h1 {
 li{
 	list-style: none;
 }
-p{
-	margin-left: 100px;
-}
 #cuadrado{
 	width: 300px;
     height: 120px;
@@ -33,7 +30,10 @@ p{
     border: 2px dashed gray;
     border-radius: 15px;
 }
-.preguntas{
+.contenedor-global p{
+	margin-left: 100px;
+}
+.contenedor-global .preguntas{
 	margin-left: 100px;
 }
 .enunciado label{
@@ -46,4 +46,64 @@ p{
 .pregunta-adicional, .pregunta-adicional-alternativa-simple, .pregunta-adicional-alternativa-multiple{
 	display: none;
 	margin-left: 40px;
+}
+
+/*CSS para ventana encuestador*/
+#listado-alumnos{
+	background-color: white;
+	margin: 0 auto;
+	width: 998px;
+}
+#instrucciones{
+	padding: 10px;
+	width: 90%;
+	margin: 0 auto;
+}
+#boton-listado-alumnos {
+    text-align: center;
+    padding-bottom: 20px;
+}
+#contenedor-tabla {
+    padding-bottom: 20px;
+}
+#resultado{
+	display: none;
+	padding-bottom: 20px;
+}
+#resultado h2{
+	text-align: center;
+}
+#encabezado {
+    overflow: hidden;
+    font-size: 18px;
+    width: 95%;
+    margin: 20px auto;
+}
+#derecha{
+    float: right;
+    width: 48%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+#izquierda {
+    float: left;
+    width: 48%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+#derecha label, #izquierda label{
+	cursor: pointer;
+}
+#cuerpo{    
+	margin: 0 auto;
+    padding: 10px 80px;
+}
+#preguntas{
+	display: none;
 }

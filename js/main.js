@@ -1,7 +1,7 @@
 $(document).ready(function () {  
 
 	//Caso 1: Pregunta alternativa simple
-	$('.pregunta-alternativa-simple .alternativa').click(function(){
+	$('.contenedor-global .pregunta-alternativa-simple .alternativa').click(function(){
 		var numeroPregunta = $(this).data('pregunta'); //se obtiene numero de pregunta
 		$("#"+numeroPregunta+" .grupo-alternativas li label").each(function(){ 	
 			$(this).attr("data-seleccionado","false");	//se cambia de color las alternativas						
@@ -12,7 +12,7 @@ $(document).ready(function () {
 	});
 
 	//Caso 2: Pregunta alternativa multiple
-	$('.pregunta-alternativa-multiple .alternativa').on( "click", function(){
+	$('.contenedor-global .pregunta-alternativa-multiple .alternativa').on( "click", function(){
 
 		var numeroPregunta = $(this).data('pregunta'); 		// obtnemos el valor de la pregunta
 		var opcionNinguna = $(this).data('ninguna'); 		// verificamos si la opcion seleccionada es ninguna
@@ -47,7 +47,7 @@ $(document).ready(function () {
 	});
 
 	//Caso 3: Pregunta Compuesta
-	$('.pregunta-compuesta .grupo-alternativas .alternativa').click(function(){
+	$('.contenedor-global .pregunta-compuesta .grupo-alternativas .alternativa').click(function(){
 		
 		var numeroPregunta = $(this).data('pregunta'); 	//se obtiene numero de pregunta
 		var alternativa = $(this).data('indice');		//se ontiene indice de alternativa (a || b ||c ...)
@@ -112,7 +112,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.pregunta-adicional-alternativa-multiple .alternativa').click(function(){
+	$('.contenedor-global .pregunta-adicional-alternativa-multiple .alternativa').click(function(){
 
 		var seleccionado = $(this).data('seleccionado');
 
@@ -127,7 +127,7 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.pregunta-adicional-alternativa-simple .grupo-alternativas-pregunta-simple .alternativa').click(function(){
+	$('.contenedor-global  .pregunta-adicional-alternativa-simple .grupo-alternativas-pregunta-simple .alternativa').click(function(){
 		var numeroPregunta = $(this).data('pregunta'); //se obtiene numero de pregunta
 		$("#"+numeroPregunta+" .grupo-alternativas-pregunta-simple  li label").each(function(){ 	
 			$(this).attr("data-seleccionado","false");	//se cambia de color las alternativas						
@@ -165,7 +165,7 @@ $(document).ready(function () {
 		});
 
 		//Para guardar respuesta(s) de pregunta(s) tipeada
-		$(".pregunta-respuesta-tipeada .respuesta-tipeada input, .pregunta-adicional .respuesta-tipeada input").each(function(){
+		$(".contenedor-global .pregunta-respuesta-tipeada .respuesta-tipeada input, .pregunta-adicional .respuesta-tipeada input").each(function(){
 			var numeroPregunta = $(this).data('pregunta');
 			var contenidoRespuesta = $(this).val();
 			if(contenidoRespuesta!=""){		//solo se toma en cuenta las cajas de texto que tengan algo de contenido
@@ -190,8 +190,7 @@ $(document).ready(function () {
 		});	
 	});
 
-
-	$('#btnTraer').click(function(){
+	/*$('#btnTraer').click(function(){
 		var parametros = {"indice": 2};
 			$.ajax({
 	                data:  parametros,
@@ -221,7 +220,7 @@ $(document).ready(function () {
                 	}
                 }
 	    	});
-	});
+	});*/
 
 	$("#botonListar").click(function(){
 		var parametros = {"indice": 4};
@@ -230,26 +229,89 @@ $(document).ready(function () {
             url : 'controlador/Controlador.php',
             type : 'post',
             success:  function (response) {
-                   var datos = $.parseJSON(response); 
-                   console.log(datos);
-                   var numeroFilas = datos.length;
-                   var contenedorTabla = $('#contenedor-tabla');
-                   contenedorTabla.html("<table align='center' border='1'>"+
-                    "<thead>"+
-                    	"<tr>"+
-		                    "<th>Codigo Usuario</th>"+
-							"<th>Nombre(s) Usuario</th>"+
-							"<th>Apellidos Usuario</th>"+
-                    	"</tr>"+
-                    "</thead>"+
-                    "<tbody id='cuerpoTabla'></tbody>"+
-                    "</table>");
-                    var cuerpoTabla = $('#cuerpoTabla');
-                    for (var i = 0; i < numeroFilas; i++) {
-                        cuerpoTabla.append('<tr><td>'+datos[i].dniAlumno+'</td><td>'+datos[i].nombres+'</td><td>'+datos[i].apellidos+'</td></tr>');
-                    }
-                    
+				var datos = $.parseJSON(response); 
+				console.log(datos);
+				var numeroFilas = datos.length;
+				var contenedorTabla = $('#contenedor-tabla');
+				contenedorTabla.html("<table align='center' border='1' id='tabla-alumnos'>"+
+				"<thead>"+
+					"<tr>"+
+				        "<th>Codigo Usuario</th>"+
+						"<th>Nombre(s) Usuario</th>"+
+						"<th>Apellidos Usuario</th>"+
+						"<th>Seleccione</th>"+
+					"</tr>"+
+				"</thead>"+
+				"<tbody id='cuerpoTabla'></tbody>"+
+				"</table>");
+				var cuerpoTabla = $('#cuerpoTabla');
+				for (var i = 0; i < numeroFilas; i++) {
+				    cuerpoTabla.append('<tr><td>'+datos[i].dniAlumno+'</td><td>'+datos[i].nombres+'</td><td>'+datos[i].apellidos+'</td><td><button onclick= prueba('+datos[i].dniAlumno+')>Ver detalle</button></td></tr>');
+				}       
             }
         });
 	});
+
+	$('#derecha').click(function(){
+		$('#datos-personales').hide();
+		$('#preguntas').show();
+	});
+
+	$('#izquierda').click(function(){
+		$('#preguntas').hide();
+		$('#datos-personales').show();
+	});	
+
 });
+
+function prueba(dniAlumno) {
+	//console.log(dniAlumno);
+	$('#resultado').show();
+	$('#resultado li label').each(function(){ 	//se asignan atributo data-seleccionado a cada una de las alternativas -> false
+		$(this).data("seleccionado",false);
+		$(this).attr("data-seleccionado","false");
+		$(this).css("color","black");
+	});
+
+	$('#resultado input').each(function(){		//se asigna valor "" (vacio) a cada input
+		$(this).val("")
+	});
+
+	var parametros = {
+		"indice" : 2,
+		"dniAlumno" : dniAlumno
+		};
+		$.ajax({
+                data:  parametros,
+                url:   'controlador/Controlador.php',
+                type:  'post',
+                success:  function (response) {
+    				var datos = $.parseJSON(response); 
+               		console.log(datos);
+               		var numeroFilas = datos.length;
+               		for (var i = 0; i < numeroFilas; i++) {
+               			$("#"+datos[i].numeroPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
+               			$("#"+datos[i].numeroPregunta+" ul li label[data-indice="+datos[i].respuestaPregunta+"][data-pregunta="+datos[i].numeroPregunta+"]").css('color','purple');
+               		}
+                }
+        });
+    var parametrosrt = {
+    	"indice":3,
+    	"dniAlumno" : dniAlumno
+    	};
+    	$.ajax({
+    		data:  parametrosrt,
+            url:   'controlador/Controlador.php',
+            type:  'post',
+            success: function(response){
+            	var datos = $.parseJSON(response);
+            	console.log(datos);
+            	var numeroFilas = datos.length;
+            	for (var i = 0; i < numeroFilas; i++) {
+            		$("#"+datos[i].numeroPregunta+" .respuesta-tipeada input").val(datos[i].respuestaPregunta);
+            	}
+            }
+    	});
+}
+
+

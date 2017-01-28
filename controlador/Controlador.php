@@ -27,7 +27,8 @@
 				session_start();
 				include 'ControladorPregunta.php';
 				$controladorPregunta = new ControladorPregunta();
-				$resultado = $controladorPregunta->listar($_SESSION['dniAlumno']);
+				$dniAlumno = $_POST["dniAlumno"];
+				$resultado = $controladorPregunta->listar($dniAlumno);
 				$filas = array();
 				$i=0;
 				while($r = mysqli_fetch_assoc($resultado)){
@@ -41,7 +42,8 @@
 					session_start();
 					include 'ControladorPregunta.php';
 					$controladorPregunta = new ControladorPregunta();
-					$resultado = $controladorPregunta->listarpt($_SESSION['dniAlumno']);
+					$dniAlumno = $_POST["dniAlumno"];
+					$resultado = $controladorPregunta->listarpt($dniAlumno);
 					$filas = array();
 					$i=0;
 					while($r = mysqli_fetch_assoc($resultado)){
