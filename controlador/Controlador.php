@@ -54,9 +54,9 @@
 					if($indice == 4){
 						//traer lista usuarios de la base de datos
 						session_start();
-						include 'ControladorUsuario.php';
-						$controladorUsuario = new ControladorUsuario();
-						$resultado = $controladorUsuario->listar();
+						include 'ControladorAlumno.php';
+						$controladorAlumno = new ControladorAlumno();
+						$resultado = $controladorAlumno->listar();
 						$filas = array();
 						$i=0;
 						while($r = mysqli_fetch_assoc($resultado)){

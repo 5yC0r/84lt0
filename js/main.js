@@ -246,7 +246,7 @@ $(document).ready(function () {
                     "</table>");
                     var cuerpoTabla = $('#cuerpoTabla');
                     for (var i = 0; i < numeroFilas; i++) {
-                        cuerpoTabla.append('<tr><td>'+datos[i].codUsuario+'</td><td>'+datos[i].nombreUsuario+'</td><td>'+datos[i].apellidosUsuario+'</td></tr>');
+                        cuerpoTabla.append('<tr><td>'+datos[i].dniAlumno+'</td><td>'+datos[i].nombres+'</td><td>'+datos[i].apellidos+'</td></tr>');
                     }
                     
             }
