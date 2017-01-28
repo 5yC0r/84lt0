@@ -10,29 +10,31 @@
             $this->pregunta = new Pregunta();
         }
         
-        public function crear($numeroPregunta, $respuestaPregunta){
+        public function crear($numeroPregunta, $respuestaPregunta, $dniAlumno){
         	$this->pregunta->set("numeroPregunta",$numeroPregunta);
         	$this->pregunta->set("respuestaPregunta",$respuestaPregunta);
+            $this->pregunta->set("dniAlumno",$dniAlumno);
 
             $resultado = $this->pregunta->crear();
             return $resultado;
         }
 
-        public function crearpt($numeroPregunta, $respuestaTipeada){
+        public function crearpt($numeroPregunta, $respuestaPregunta, $dniAlumno){
             $this->pregunta->set("numeroPregunta",$numeroPregunta);
-            $this->pregunta->set("respuestaTipeada",$respuestaTipeada);
+            $this->pregunta->set("respuestaPregunta",$respuestaPregunta);
+            $this->pregunta->set("dniAlumno",$dniAlumno);
 
             $resultado = $this->pregunta->crearpt();
             return $resultado;
         }
 
-        public function listar(){
-            $resultado = $this->pregunta->listar();
+        public function listar($dniAlumno){
+            $resultado = $this->pregunta->listar($dniAlumno);
             return $resultado;
         }
 
-        public function listarpt(){
-            $resultado = $this->pregunta->listarpt();
+        public function listarpt($dniAlumno){
+            $resultado = $this->pregunta->listarpt($dniAlumno);
             return $resultado;
         }
     }

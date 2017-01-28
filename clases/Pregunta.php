@@ -7,7 +7,7 @@
 		private $numeroPregunta;
 		private $respuestaPregunta;
 
-		private $respuestaTipeada;
+        private $dniAlumno;
  
 		private $con;
 
@@ -25,26 +25,25 @@
         }
 
         public function crear(){
-        	$sql = "INSERT INTO pregunta (numeroPregunta, respuestaPregunta) VALUES ('{$this->numeroPregunta}','{$this->respuestaPregunta}')";
+        	$sql = "INSERT INTO pregunta (numeroPregunta, respuestaPregunta, dniAlumno) VALUES ('{$this->numeroPregunta}','{$this->respuestaPregunta}','{$this->dniAlumno}')";
         	$this->con->consultaSimple($sql);
         	return true;
         }
 
         public function crearpt(){
-        	$sql = "INSERT INTO preguntart (numeroPregunta, respuestaPregunta) VALUES ('{$this->numeroPregunta}','{$this->respuestaTipeada}')";
+        	$sql = "INSERT INTO preguntart (numeroPregunta, respuestaPregunta, dniAlumno) VALUES ('{$this->numeroPregunta}','{$this->respuestaPregunta}', '{$this->dniAlumno}')";
         	$this->con->consultaSimple($sql);
         	return true;
         }
-        public function listar(){
-            $sql = "SELECT * FROM pregunta";
+        public function listar($dniAlumno){
+            $sql = "SELECT * FROM pregunta WHERE dniAlumno ='".$dniAlumno."'";
             $resultado = $this->con->consultaRetorno($sql);
             return $resultado;
         }
-        public function listarpt(){
-            $sql = "SELECT * FROM preguntart";
+        public function listarpt($dniAlumno){
+            $sql = "SELECT * FROM preguntart  WHERE dniAlumno ='".$dniAlumno."'";
             $resultado = $this->con->consultaRetorno($sql);
             return $resultado;
         }
 	}
-
 ?>

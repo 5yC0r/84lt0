@@ -12,7 +12,7 @@
 			$this->host = "localhost";
 			$this->user = "root";
 			$this->pass = "";
-			$this->bd = "encuesta";
+			$this->bd = "encuestaunt";
 
 			$this->con = mysqli_connect($this->host,$this->user,$this->pass,$this->bd);
 

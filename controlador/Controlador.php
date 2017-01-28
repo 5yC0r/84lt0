@@ -4,25 +4,30 @@
 
 	if($indice == 0){
 		//regitrar respuestas en la base de datos
+		session_start();
 		include 'ControladorPregunta.php';
-		$numeroPregunta=$_POST["pregunta"];
-	    $respuestaPregunta=$_POST["respuesta"];
+		$numeroPregunta = $_POST["pregunta"];
+	    $respuestaPregunta = $_POST["respuesta"];
+	    $dniAlumno = $_SESSION['dniAlumno'];
 	    $controladorPregunta = new ControladorPregunta();
-	    $r = $controladorPregunta->crear($numeroPregunta,$respuestaPregunta);
+	    $r = $controladorPregunta->crear($numeroPregunta,$respuestaPregunta,$dniAlumno);
 	    //echo $numeroPregunta."+".$respuestaPregunta;
 	}else{
 		if($indice == 1){
+			session_start();
 			include 'ControladorPregunta.php';
-			$numeroPregunta=$_POST["pregunta"];
-		    $respuestaPregunta=$_POST["respuesta"];
+			$numeroPregunta = $_POST["pregunta"];
+		    $respuestaPregunta = $_POST["respuesta"];
+		    $dniAlumno = $_SESSION['dniAlumno'];
 		    $controladorPregunta = new ControladorPregunta();
-	    	$r = $controladorPregunta->crearpt($numeroPregunta,$respuestaPregunta);
+	    	$r = $controladorPregunta->crearpt($numeroPregunta,$respuestaPregunta,$dniAlumno);
 		}else{
 			if($indice == 2){
 				//traer respuestas de la base de datos (preguntas con alernativa)
+				session_start();
 				include 'ControladorPregunta.php';
 				$controladorPregunta = new ControladorPregunta();
-				$resultado = $controladorPregunta->listar();
+				$resultado = $controladorPregunta->listar($_SESSION['dniAlumno']);
 				$filas = array();
 				$i=0;
 				while($r = mysqli_fetch_assoc($resultado)){
@@ -33,9 +38,10 @@
 			}else{
 				if($indice == 3){
 					//traer respuestas de la base de datos (preguntas tipeadas)
+					session_start();
 					include 'ControladorPregunta.php';
 					$controladorPregunta = new ControladorPregunta();
-					$resultado = $controladorPregunta->listarpt();
+					$resultado = $controladorPregunta->listarpt($_SESSION['dniAlumno']);
 					$filas = array();
 					$i=0;
 					while($r = mysqli_fetch_assoc($resultado)){
@@ -46,7 +52,8 @@
 				}
 				else{
 					if($indice == 4){
-						//traer respuestas de la base de datos (preguntas tipeadas)
+						//traer lista usuarios de la base de datos
+						session_start();
 						include 'ControladorUsuario.php';
 						$controladorUsuario = new ControladorUsuario();
 						$resultado = $controladorUsuario->listar();
