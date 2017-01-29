@@ -66,6 +66,22 @@
 							$i++;
 						}
 						echo json_encode($filas);
+					}else{
+						if($indice == 5){
+							//traer datos de alumno
+							session_start();
+							include 'ControladorAlumno.php';
+							$controladorAlumno = new ControladorAlumno();
+							$dniAlumno = $_POST["dniAlumno"];
+							$resultado = $controladorAlumno->ver($dniAlumno);
+							/*$filas = array();
+							$i=0;
+							while($r = mysqli_fetch_assoc($resultado)){
+								$filas[$i] = $r;
+								$i++;
+							}*/
+							echo json_encode($resultado);
+						}
 					}
 				}
 			}

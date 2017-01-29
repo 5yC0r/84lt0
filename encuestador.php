@@ -5,11 +5,9 @@
 	<title>Ventana Administrador</title>
 
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">-->
 	<link rel="stylesheet" href="css/main.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>-->
 	<script src="js/main.js"></script>
 </head>
 <body>
@@ -21,22 +19,7 @@
 			<button id="botonListar">Ver listado</button>
 		</div>
 		<div id="contenedor-tabla"></div>
-		<div class="" id="resultado">
-			<!--<div class="row">
-				<div class="col s12">
-					<ul class="tabs">
-					<li class="tab col s3"><a href="#test1">Test 1</a></li>
-					<li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-					<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
-					<li class="tab col s3"><a href="#test4">Test 4</a></li>
-					</ul>
-				</div>
-				<div id="test1" class="col s12">Test 1</div>
-				<div id="test2" class="col s12">Test 2</div>
-				<div id="test3" class="col s12">Test 3</div>
-				<div id="test4" class="col s12">Test 4</div>
-			</div>-->
-			
+		<div class="" id="resultado">			
 			<div id="encabezado">
 				<div id="izquierda">
 					<label for="">Datos Personales</label>
@@ -53,12 +36,17 @@
 					?>
 				</div>
 				<div id="datos-personales">
-					<label for="">DNI Alumno</label><br>
-					<label for="">Nombes Alumno</label><br>
-					<label for="">Apellidos Alumno</label><br>
-					. <br>
-					. <br>
-					. <br>
+					<label for="">Dni Alumno: </label><label for="" id="dniAlumno"></label><br>
+					<label for="">Nombes Alumno: </label><label for="" id="nombres"></label><br>
+					<label for="">Apellidos Alumno: </label><label for="" id="apellidos"></label><br>
+					<label for="">Fecha Nacimiento: </label><label for="" id="fechaNacimiento"></label><br>
+					<label for="">Estado Civil: </label><label for="" id="estadoCivil"></label><br>
+					<label for="">Región de Procedencia: </label><label for="" id="regionProcedencia"></label><br>
+					<label for="">Sexo: </label><label for="" id="sexo"></label><br>
+					<label for="">Direccioón: </label><label for="" id="direccion"></label><br>
+					<label for="">Año Egreso: </label><label for="" id="anioEgreso"></label><br>
+					<label for="">Teléfono: </label><label for="" id="telefono"></label><br>
+					<label for="">Correo Electrónico: </label><label for="" id="correoElectronico"></label><br>
 				</div>
 			</div>
 		</div>

@@ -30,5 +30,11 @@
             $resultado = $this->alumno->listar();
             return $resultado;
         }
+
+        public function ver($dniAlumno){
+			$this->alumno->set("dniAlumno",$dniAlumno);
+			$datos = $this->alumno->ver();
+			return $datos;
+		}
 	}
 ?>

@@ -190,38 +190,6 @@ $(document).ready(function () {
 		});	
 	});
 
-	/*$('#btnTraer').click(function(){
-		var parametros = {"indice": 2};
-			$.ajax({
-	                data:  parametros,
-	                url:   'controlador/Controlador.php',
-	                type:  'post',
-	                success:  function (response) {
-	    				var datos = $.parseJSON(response); 
-                   		console.log(datos);
-                   		var numeroFilas = datos.length;
-                   		for (var i = 0; i < numeroFilas; i++) {
-                   			$("#"+datos[i].numeroPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
-                   			$("#"+datos[i].numeroPregunta+" ul li label[data-indice="+datos[i].respuestaPregunta+"][data-pregunta="+datos[i].numeroPregunta+"]").css('color','purple');
-                   		}
-	                }
-	        });
-	    var parametrosrt = {"indice":3};
-	    	$.ajax({
-	    		data:  parametrosrt,
-                url:   'controlador/Controlador.php',
-                type:  'post',
-                success: function(response){
-                	var datos = $.parseJSON(response);
-                	console.log(datos);
-                	var numeroFilas = datos.length;
-                	for (var i = 0; i < numeroFilas; i++) {
-                		$("#"+datos[i].numeroPregunta+" .respuesta-tipeada input").val(datos[i].respuestaPregunta);
-                	}
-                }
-	    	});
-	});*/
-
 	$("#botonListar").click(function(){
 		var parametros = {"indice": 4};
         $.ajax({
@@ -310,6 +278,35 @@ function prueba(dniAlumno) {
             	for (var i = 0; i < numeroFilas; i++) {
             		$("#"+datos[i].numeroPregunta+" .respuesta-tipeada input").val(datos[i].respuestaPregunta);
             	}
+            }
+    	});
+    var parametrosAlumno = {
+    	"indice" : 5,
+    	"dniAlumno" : dniAlumno
+    	};
+    	$.ajax({
+    		data: parametrosAlumno,
+    		url:   'controlador/Controlador.php',
+            type:  'post',
+            success: function(response){
+            	var datos = $.parseJSON(response);
+            	//var datos = response;
+            	console.log(datos);
+            	//var numeroFilas = datos.length;
+            	/*for (var i = 0; i < numeroFilas; i++) {
+            		$("#"+datos[i].numeroPregunta+" .respuesta-tipeada input").val(datos[i].respuestaPregunta);
+            	}*/
+            	$('#datos-personales #dniAlumno').html(datos.dniAlumno);
+            	$('#datos-personales #nombres').html(datos.nombres);
+            	$('#datos-personales #apellidos').html(datos.apellidos);
+            	$('#datos-personales #fechaNacimiento').html(datos.fechaNacimiento);
+            	$('#datos-personales #estadoCivil').html(datos.estadoCivil);
+            	$('#datos-personales #regionProcedencia').html(datos.regionProcedencia);
+            	$('#datos-personales #sexo').html(datos.sexo);
+            	$('#datos-personales #direccion').html(datos.direccion);
+            	$('#datos-personales #anioEgreso').html(datos.anioEgreso);
+            	$('#datos-personales #telefono').html(datos.telefono);
+            	$('#datos-personales #correoElectronico').html(datos.correoElectronico);
             }
     	});
 }
