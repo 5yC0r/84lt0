@@ -13,7 +13,7 @@
 <body>
 	<div id="listado-alumnos">
 		<div id="instrucciones">
-			<p>Esta es la lista de las personas que han respondido la encuesta. Darle click al botón "Ver respuestas" en la misma fila del nombre de la persona que desea ver sus respuestas y aparecerán las preguntas con la(s) alternativa(s) seleccionadas o escritas</p>
+			<p>Esta es la lista de las personas que han respondido la encuesta. Darle click al botón "Ver detalle" en la misma fila del nombre de la persona para ver información personal y sus respuestas.</p>
 		</div>
 		<div id="boton-listado-alumnos">
 			<button id="botonListar">Ver listado</button>

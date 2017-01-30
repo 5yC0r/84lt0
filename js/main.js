@@ -27,7 +27,7 @@ $(document).ready(function () {
 			});
 			$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
 			$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
-			$(this).css('color','green');
+			$(this).css('color','red');
 		}else{
 			// si se ha elegido cualquier otra opcion menos ninguna, "desactivamos" la opcion ninguna y asignamos el atributo data-seleccionado=false
 			$("#"+numeroPregunta+" .grupo-alternativas-pregunta-multiple li label[data-ninguna=si]").attr("data-seleccionado","false");
@@ -37,7 +37,7 @@ $(document).ready(function () {
 			if(seleccionado == false){
 				$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
 				$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
-				$(this).css('color','green');
+				$(this).css('color','red');
 			}else{
 				$(this).attr("data-seleccionado","false");
 				$(this).data("seleccionado",false);
@@ -119,7 +119,7 @@ $(document).ready(function () {
 		if(seleccionado == false){
 			$(this).attr("data-seleccionado","true");	// no funciona para cambiar internamente, solo de forma visual
 			$(this).data("seleccionado",true); 			// necesario para cambiar estado del atributo data-seleccionado, este si lo hace de forma interna
-			$(this).css('color','green');
+			$(this).css('color','red');
 		}else{
 			$(this).attr("data-seleccionado","false");
 			$(this).data("seleccionado",false);
@@ -159,7 +159,7 @@ $(document).ready(function () {
 	                        $("#resultado").html("Procesando, espere por favor...");
 	                },
 	                success:  function (response) {
-	                        $("#resultado").html(response);
+	                        $("#resultado").html("Sus respuestas han sido ingresadas y registradas, gracias por participar de nuestra encuesta.");
 	                }
 	        });
 		});
@@ -201,7 +201,7 @@ $(document).ready(function () {
 				console.log(datos);
 				var numeroFilas = datos.length;
 				var contenedorTabla = $('#contenedor-tabla');
-				contenedorTabla.html("<table align='center' border='1' id='tabla-alumnos'>"+
+				contenedorTabla.html("<table align='center' id='tabla-alumnos'>"+
 				"<thead>"+
 					"<tr>"+
 				        "<th>Codigo Usuario</th>"+
@@ -214,7 +214,7 @@ $(document).ready(function () {
 				"</table>");
 				var cuerpoTabla = $('#cuerpoTabla');
 				for (var i = 0; i < numeroFilas; i++) {
-				    cuerpoTabla.append('<tr><td>'+datos[i].dniAlumno+'</td><td>'+datos[i].nombres+'</td><td>'+datos[i].apellidos+'</td><td><button onclick= prueba('+datos[i].dniAlumno+')>Ver detalle</button></td></tr>');
+				    cuerpoTabla.append('<tr><td>'+datos[i].dniAlumno+'</td><td>'+datos[i].nombres+'</td><td>'+datos[i].apellidos+'</td><td><button class=boton-ver onclick= prueba('+datos[i].dniAlumno+')>Ver detalle</button></td></tr>');
 				}       
             }
         });
@@ -259,7 +259,7 @@ function prueba(dniAlumno) {
                		var numeroFilas = datos.length;
                		for (var i = 0; i < numeroFilas; i++) {
                			$("#"+datos[i].numeroPregunta+"").show();	//mostramos las respuestas, si es que hay alguna que originalmente esta oculta
-               			$("#"+datos[i].numeroPregunta+" ul li label[data-indice="+datos[i].respuestaPregunta+"][data-pregunta="+datos[i].numeroPregunta+"]").css('color','purple');
+               			$("#"+datos[i].numeroPregunta+" ul li label[data-indice="+datos[i].respuestaPregunta+"][data-pregunta="+datos[i].numeroPregunta+"]").css('color','red');
                		}
                 }
         });

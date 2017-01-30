@@ -103,7 +103,7 @@
 				<label for="">Explique a continuación el motivo por el cuál no se tituló y de por terminada la encuesta.</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="text" data-pregunta="p7-1" value="">
+				<input type="text" data-pregunta="p7-1" value="" size="90">
 			</div>
 		</div>
 	</div>
@@ -147,7 +147,7 @@
 				<label for="">¿Cuál es el motivo por el que no ejerce la profesión?</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="text" data-pregunta="p9-1" value="">
+				<input type="text" data-pregunta="p9-1" value="" size="90">
 			</div>
 		</div>
 	</div>
@@ -259,20 +259,18 @@
 	</div>
 	<div class="pregunta-respuesta-tipeada" id="p14">
 		<div class="enunciado">
-			<label for="">14. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion?</label>
+			<label for="">14. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
 		</div>
 		<div class="respuesta-tipeada">
 			<input type="number" step="any" data-pregunta="p14" placeholder="50">
-			<label for=""> * La respuesta en numeros no en letras</label>
 		</div>
 	</div>
 	<div class="pregunta-respuesta-tipeada" id="p15">
 		<div class="enunciado">
-			<label for="">15. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista?</label>
+			<label for="">15. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
 		</div>
 		<div class="respuesta-tipeada">
 			<input type="number" step="any" data-pregunta="p15" placeholder="50">
-			<label for=""> * La respuesta en numeros no en letras</label>
 		</div>
 	</div>
 	<div class="pregunta-alternativa-simple" id="p16">
