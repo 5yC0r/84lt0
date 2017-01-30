@@ -1,7 +1,7 @@
-<!--<?php
-	//session_start();
-	//$_SESSION['dniAlumno']=12345678;
-?>-->
+<?php
+	session_start();
+	$_SESSION['dniAlumno']=87654321;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,8 @@
 		<!--<button id="btnTraer">Traer respuestas base datos</button>
 		<button><a href=""></a>cerrar sesion</button>
 		<div><p>Las respuestas marcadas se ven en la consola del navegador</p></div>-->
-		<div id="resultado"></div>
+		<div id="resultado">
+		</div>
 	</div>
 </body>
 </html>

@@ -58,7 +58,8 @@ li{
 #boton-guardar-respuestas{
     float: right;
     text-align: center;
-    margin: 20px;
+    margin-right: 50px;
+    margin-bottom: 30px;
     float: right;
     height: 50px;
     width: 200px;
@@ -74,6 +75,8 @@ li{
 }
 .contenedor-global #resultado{
     text-align: center;
+    margin-left: 100px;
+    color: red;
 }
 
 /*CSS para ventana encuestador*/
@@ -95,7 +98,7 @@ li{
 #contenedor-tabla {
     padding-bottom: 20px;
 }
-#resultado{
+#listado-alumnos #resultado{
 	display: none;
 	padding-bottom: 20px;
 }

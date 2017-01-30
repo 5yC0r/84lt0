@@ -140,7 +140,7 @@ $(document).ready(function () {
 	//Caso 4: Pregunta con respuesta tipeada
 
 	//Evento de boton para guardar los datos de la encuesta
-	$('#boton').click(function(){
+	$('#boton-guardar-respuestas').click(function(){
 		$(".grupo-alternativas li label[data-seleccionado=true], .grupo-alternativas-pregunta-simple li label[data-seleccionado=true], .grupo-alternativas-pregunta-multiple li label[data-seleccionado=true]").each(function(){
 			$(this).css("color","blue");
 			var numeroPregunta = $(this).data('pregunta');
@@ -158,7 +158,7 @@ $(document).ready(function () {
 	                beforeSend: function () {
 	                        $("#resultado").html("Procesando, espere por favor...");
 	                },
-	                success:  function (response) {
+	                success:  function () {
 	                        $("#resultado").html("Sus respuestas han sido ingresadas y registradas, gracias por participar de nuestra encuesta.");
 	                }
 	        });
@@ -180,14 +180,19 @@ $(document).ready(function () {
 		                url:   'controlador/Controlador.php',
 		                type:  'post',
 		                beforeSend: function () {
-		                        $("#resultado").html("Procesando, espere por favor...");
+		                		$(".contenedor-global #resultado").show();
+		                        $(".contenedor-global #resultado").html("Procesando, espere por favor...");
 		                },
-		                success:  function (response) {
-		                        $("#resultado").html(response);
+		                success:  function () {
+		                		$(".contenedor-global #resultado").show();
+		                        $(".contenedor-global #resultado").html("Sus respuestas han sido ingresadas y registradas, gracias por participar de nuestra encuesta.");
 		                }
 		        });
 			}
-		});	
+		});
+		$('#boton-guardar-respuestas').attr("disabled", true);			//descativamos boton
+		$('#boton-guardar-respuestas').css("background-color", "gray");	//cambiamos atributos
+		$('#boton-guardar-respuestas').css("border", "1px solid gray");	
 	});
 
 	$("#botonListar").click(function(){
