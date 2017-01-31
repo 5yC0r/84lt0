@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['dniAlumno']=87654321;
+	$_SESSION['dniAlumno']=78945612;
 ?>
 <!DOCTYPE html>
 <html lang="en">

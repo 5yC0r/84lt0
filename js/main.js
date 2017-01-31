@@ -1,4 +1,26 @@
 $(document).ready(function () {  
+	
+	$('#preguntas-titulado').hide(); //desde el inicio ocultamos las preguntas 8 en adelante
+
+	$('.contenedor-global #p7 .alternativa').click(function(){
+		var alternativa = $(this).data("indice");
+		console.log(alternativa);
+		if(alternativa == 'a'){
+			$('#preguntas-titulado').show();
+		}else{
+			$('#preguntas-titulado').hide();	//ocultamos la preguntas dentro de #preguntas-titulado
+
+			$('#preguntas-titulado .alternativa').each(function(){
+				$(this).attr("data-seleccionado","false");
+				$(this).data("seleccionado",false);
+				$(this).css('color','black');
+			});
+
+			$('#preguntas-titulado input').each(function(){
+				$(this).val('');
+			});
+		}
+	});
 
 	//Caso 1: Pregunta alternativa simple
 	$('.contenedor-global .pregunta-alternativa-simple .alternativa').click(function(){
