@@ -162,7 +162,8 @@ $(document).ready(function () {
 	//Caso 4: Pregunta con respuesta tipeada
 
 	//Evento de boton para guardar los datos de la encuesta
-	$('#boton-guardar-respuestas').click(function(){
+	$('#cerrar-session').click(function(){
+
 		$(".grupo-alternativas li label[data-seleccionado=true], .grupo-alternativas-pregunta-simple li label[data-seleccionado=true], .grupo-alternativas-pregunta-multiple li label[data-seleccionado=true]").each(function(){
 			$(this).css("color","blue");
 			var numeroPregunta = $(this).data('pregunta');
@@ -212,9 +213,6 @@ $(document).ready(function () {
 		        });
 			}
 		});
-		$('#boton-guardar-respuestas').attr("disabled", true);			//descativamos boton
-		$('#boton-guardar-respuestas').css("background-color", "gray");	//cambiamos atributos
-		$('#boton-guardar-respuestas').css("border", "1px solid gray");	
 	});
 
 	$("#botonListar").click(function(){
@@ -250,12 +248,17 @@ $(document).ready(function () {
 	$('#derecha').click(function(){
 		$('#datos-personales').hide();
 		$('#preguntas').show();
+		$('#izquierda').css("border-bottom","5px solid #e1b3b3");
+		$('#derecha').css("border-bottom","5px solid #dd6061");
+		
 	});
 
 	$('#izquierda').click(function(){
 		$('#preguntas').hide();
 		$('#datos-personales').show();
-	});	
+		$('#derecha').css("border-bottom","5px solid #e1b3b3");
+		$('#izquierda').css("border-bottom","5px solid #dd6061");
+	});
 
 });
 

@@ -81,7 +81,12 @@
 								$i++;
 							}*/
 							echo json_encode($resultado);
-						}
+						}/*else{
+							if($indice == 6){
+								session_start();
+								session_destroy();//Destruimos la sesion
+							}
+						}*/
 					}
 				}
 			}

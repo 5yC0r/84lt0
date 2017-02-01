@@ -121,7 +121,7 @@
 			</div>
 			<div class="pregunta-adicional-alternativa-multiple" id="p8-1" data-head="a">
 				<div class="enunciado">
-					<label for="">Usted se ha capacidado profesionalmente en: (puede marcar más de una opcion)</label>
+					<label for="">Usted se ha capacidado profesionalmente en: (puede marcar más de una opción)</label>
 				</div>
 				<div class="grupo-alternativas-pregunta-multiple">
 					<ul>
@@ -179,7 +179,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="pregunta-compuesta" id="p12">
+		<div class="pregunta-alternativa-simple" id="p12">
 			<div class="enunciado">
 				<label for="">12. Actualmente su estado laboral como cirujano dentista es:</label>
 			</div>
@@ -191,99 +191,99 @@
 					<li><label for="" class="alternativa" data-pregunta="p12" data-indice="d">d) Desempleado.</label></li>
 				</ul>
 			</div>
-
-			<div class="pregunta-adicional-alternativa-simple" id="p12-1" data-head="b">
-				<div class="enunciado">
-					<label for="">Como trabajador dependiente, ¿En cuánto tiempo después de egresado consiguió trabajo?</label>
-				</div>
-				<div class="grupo-alternativas-pregunta-simple">
-					<ul>
-						<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="a">a) Menos de 1 año.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="b">b) Entre 1 y 2 años.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="c">c) Entre 2 y 3 años.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-1" data-indice="d">d) Más de 3 años.</label></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="pregunta-adicional-alternativa-simple" id="p12-2" data-head="b">
-				<div class="enunciado">
-					<label for="">¿Usted cómo consiguió trabajo de cirujano dentista dependiente?</label>
-				</div>
-				<div class="grupo-alternativas-pregunta-simple">
-					<ul>
-						<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="a">a) Recomendaciones Personales.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="b">b) Acceso por concurso.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="c">c) Avisos Publicitarios.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-2" data-indice="d">d) Otros.</label></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="pregunta-adicional-alternativa-simple" id="p12-3" data-head="b">
-				<div class="enunciado">
-					<label for="">¿Cuál fue el grado de dificultad para conseguir empleo como dependiente?</label>
-				</div>
-				<div class="grupo-alternativas-pregunta-simple">
-					<ul>
-						<li><label for="" class="alternativa" data-pregunta="p12-3" data-indice="a">a) Mucha Dificultad.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-3" data-indice="b">b) Alguna Dificultad.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-3" data-indice="c">c) Ninguna Dificultad.</label></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="pregunta-adicional-alternativa-simple" id="p12-4" data-head="a">
-				<div class="enunciado">
-					<label for="">Como trabajador independiente, ¿En cuánto tiempo comenzó a tener ingresos?</label>
-				</div>
-				<div class="grupo-alternativas-pregunta-simple">
-					<ul>
-						<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="a">a) Menos de 1 año.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="b">b) Entre 1 y 2 años.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="c">c) Entre 2 y 3 años.</label></li>
-						<li><label for="" class="alternativa" data-pregunta="p12-4" data-indice="d">d) Más de 3 años.</label></li>
-					</ul>
-				</div>
-			</div>
 		</div>
+
 		<div class="pregunta-alternativa-simple" id="p13">
 			<div class="enunciado">
-				<label for="">13. ¿Dónde es el medio en el que desarrolla la profesión?</label>
+				<label for="">13. Como trabajador dependiente, ¿En cuánto tiempo después de egresado consiguió trabajo?</label>
 			</div>
 			<div class="grupo-alternativas">
 				<ul>
-					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="a">a) Medio Urbano.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="b">b) Medio Rural.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="c">c) Medio Urbano Marginal.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="a">a) Menos de 1 año.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="b">b) Entre 1 y 2 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="c">c) Entre 2 y 3 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="d">d) Más de 3 años.</label></li>
 				</ul>
 			</div>
 		</div>
-		<div class="pregunta-respuesta-tipeada" id="p14">
+
+		<div class="pregunta-alternativa-simple" id="p14">
 			<div class="enunciado">
-				<label for="">14. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
-			</div>
-			<div class="respuesta-tipeada">
-				<input type="number" step="any" data-pregunta="p14" placeholder="50">
-			</div>
-		</div>
-		<div class="pregunta-respuesta-tipeada" id="p15">
-			<div class="enunciado">
-				<label for="">15. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
-			</div>
-			<div class="respuesta-tipeada">
-				<input type="number" step="any" data-pregunta="p15" placeholder="50">
-			</div>
-		</div>
-		<div class="pregunta-alternativa-simple" id="p16">
-			<div class="enunciado">
-				<label for="">16.¿Cuál es el grado de satisfacción con el ingreso medio recibido como cirujano dentista?</label>
+				<label for="">14. ¿Usted cómo consiguió trabajo de cirujano dentista dependiente?</label>
 			</div>
 			<div class="grupo-alternativas">
 				<ul>
-					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="a">a) Satisfecho.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="b">b) Medianamente satisfecho.</label></li>
-					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="c">c) Nada satisfecho.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p14" data-indice="a">a) Recomendaciones Personales.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p14" data-indice="b">b) Acceso por concurso.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p14" data-indice="c">c) Avisos Publicitarios.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p14" data-indice="d">d) Otros.</label></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pregunta-alternativa-simple" id="p15">
+			<div class="enunciado">
+				<label for="">15. ¿Cuál fue el grado de dificultad para conseguir empleo como dependiente?</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p15" data-indice="a">a) Mucha Dificultad.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p15" data-indice="b">b) Alguna Dificultad.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p15" data-indice="c">c) Ninguna Dificultad.</label></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pregunta-alternativa-simple" id="p16">
+			<div class="enunciado">
+				<label for="">16. Como trabajador independiente, ¿En cuánto tiempo comenzó a tener ingresos?</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="a">a) Menos de 1 año.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="b">b) Entre 1 y 2 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="c">c) Entre 2 y 3 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="d">d) Más de 3 años.</label></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pregunta-alternativa-simple" id="p17">
+			<div class="enunciado">
+				<label for="">17. ¿Dónde es el medio en el que desarrolla la profesión?</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p17" data-indice="a">a) Medio Urbano.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p17" data-indice="b">b) Medio Rural.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p17" data-indice="c">c) Medio Urbano Marginal.</label></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pregunta-respuesta-tipeada" id="p18">
+			<div class="enunciado">
+				<label for="">18. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
+			</div>
+			<div class="respuesta-tipeada">
+				<input type="number" step="any" data-pregunta="p18" placeholder="50">
+			</div>
+		</div>
+		<div class="pregunta-respuesta-tipeada" id="p19">
+			<div class="enunciado">
+				<label for="">19. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
+			</div>
+			<div class="respuesta-tipeada">
+				<input type="number" step="any" data-pregunta="p19" placeholder="50">
+			</div>
+		</div>
+		<div class="pregunta-alternativa-simple" id="p20">
+			<div class="enunciado">
+				<label for="">20.¿Cuál es el grado de satisfacción con el ingreso medio recibido como cirujano dentista?</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p20" data-indice="a">a) Satisfecho.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p20" data-indice="b">b) Medianamente satisfecho.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p20" data-indice="c">c) Nada satisfecho.</label></li>
 				</ul>
 			</div>
 		</div>
