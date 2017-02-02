@@ -4,9 +4,13 @@ $(document).ready(function () {
 
 	$('.contenedor-global #p7 .alternativa').click(function(){
 		var alternativa = $(this).data("indice");
-		console.log(alternativa);
+		//console.log(alternativa);
 		if(alternativa == 'a'){
 			$('#preguntas-titulado').show();
+			$('#preguntas-titulado .pregunta-alternativa-simple, #preguntas-titulado .pregunta-alternativa-multiple, #preguntas-titulado .pregunta-compuesta, #preguntas-titulado .pregunta-respuesta-tipeada').each(function(){
+				$(this).attr("data-marcado","nomarcado");
+				$(this).data("marcado","nomarcado");
+			});
 		}else{
 			$('#preguntas-titulado').hide();	//ocultamos la preguntas dentro de #preguntas-titulado
 
@@ -14,6 +18,12 @@ $(document).ready(function () {
 				$(this).attr("data-seleccionado","false");
 				$(this).data("seleccionado",false);
 				$(this).css('color','black');
+			});
+
+			//luego de ocultar estas preguntas aparte de no contar para guardar en la bd se debe 
+			$('#preguntas-titulado .pregunta-alternativa-simple, #preguntas-titulado .pregunta-alternativa-multiple, #preguntas-titulado .pregunta-compuesta, #preguntas-titulado .pregunta-respuesta-tipeada').each(function(){
+				$(this).removeAttr("data-marcado");
+				$(this).removeData("marcado");
 			});
 
 			$('#preguntas-titulado input').each(function(){
@@ -25,6 +35,8 @@ $(document).ready(function () {
 	//Caso 1: Pregunta alternativa simple
 	$('.contenedor-global .pregunta-alternativa-simple .alternativa').click(function(){
 		var numeroPregunta = $(this).data('pregunta'); //se obtiene numero de pregunta
+		$("#"+numeroPregunta+"").attr("data-marcado","marcado");	//se agrega atritubo 'data-marcado'->'marcado' a la pregunta con el numero obtenido
+		$("#"+numeroPregunta+"").data("marcado","marcado");			//a veces el el metodo .attr() no vasta, asi que tambien usamos .data()
 		$("#"+numeroPregunta+" .grupo-alternativas li label").each(function(){ 	
 			$(this).attr("data-seleccionado","false");	//se cambia de color las alternativas						
 			$(this).css("color","gray");				//se cambia atributo data-seleccionado -> true
@@ -38,6 +50,9 @@ $(document).ready(function () {
 
 		var numeroPregunta = $(this).data('pregunta'); 		// obtnemos el valor de la pregunta
 		var opcionNinguna = $(this).data('ninguna'); 		// verificamos si la opcion seleccionada es ninguna
+
+		$("#"+numeroPregunta+"").attr("data-marcado","marcado");	//se agrega atritubo 'data-marcado'->'marcado' a la pregunta con el numero obtenido
+		$("#"+numeroPregunta+"").data("marcado","marcado");			//a veces el el metodo .attr() no vasta, asi que tambien usamos .data()
 
 		var seleccionado = $(this).data('seleccionado'); 	// obtenemos el valor del atributo data-seleccionado de la opcion elegida
 
@@ -74,6 +89,9 @@ $(document).ready(function () {
 		var numeroPregunta = $(this).data('pregunta'); 	//se obtiene numero de pregunta
 		var alternativa = $(this).data('indice');		//se ontiene indice de alternativa (a || b ||c ...)
 
+		$("#"+numeroPregunta+"").attr("data-marcado","marcado");	//se agrega atritubo 'data-marcado'->'marcado' a la pregunta con el numero obtenido
+		$("#"+numeroPregunta+"").data("marcado","marcado");			//a veces el el metodo .attr() no vasta, asi que tambien usamos .data()
+
 		/*Caso de las preguntas (7) y (9) */
 
 		$("#"+numeroPregunta+" .grupo-alternativas li label[data-pregunta="+numeroPregunta+"]").each(function(){ 	
@@ -84,7 +102,8 @@ $(document).ready(function () {
 		$(this).css('color','red');						//se cambia color la alternativa seleccionada
 		$(this).attr("data-seleccionado","true"); 		// se cambia atributo data-seleccionado -> true
 
-		$("#"+numeroPregunta+" .pregunta-adicional").each(function(){ 		
+		/*Pregunta compuesta - respuesta tipeada*/
+		$("#"+numeroPregunta+" .pregunta-adicional-tipeada").each(function(){ 		
 			var adicional = $(this).data("head");
 			if(alternativa == adicional){
 				var numeroPreguntaAdicional = $(this).attr('id');								
@@ -123,6 +142,9 @@ $(document).ready(function () {
 			console.log("pregunta compuesta alternativa multiple");
 			if(alternativa == subordinante){
 				$(this).show();
+				var numeroPreguntaAdicional = $(this).attr('id');
+				$("#"+numeroPreguntaAdicional+"").attr("data-marcado","nomarcado");		//se agrega atritubo 'data-marcado'->'marcado' a la pregunta con el numero obtenido
+				$("#"+numeroPreguntaAdicional+"").data("marcado","nomarcado");			//a veces el el metodo .attr() no vasta, asi que tambien usamos .data()
 			}else{
 				var numeroPreguntaAdicional = $(this).attr('id');	// (**)
 				$("#"+numeroPreguntaAdicional+" .grupo-alternativas-pregunta-multiple li label[data-pregunta="+numeroPreguntaAdicional+"]").each(function(){ 		
@@ -130,6 +152,8 @@ $(document).ready(function () {
 					$(this).css("color","black");				
 				});
 				$(this).hide();
+				$("#"+numeroPreguntaAdicional+"").removeAttr("data-marcado");
+				$("#"+numeroPreguntaAdicional+"").removeData("marcado");
 			}
 		});
 	});
@@ -161,9 +185,24 @@ $(document).ready(function () {
 
 	//Caso 4: Pregunta con respuesta tipeada
 
+	$('.contenedor-global .pregunta-respuesta-tipeada .respuesta-tipeada input').on("input",function(){
+		var numeroPregunta = $(this).data('pregunta'); //se obtiene numero de pregunta
+		if($(this).val() !== ""){
+			$("#"+numeroPregunta+"").attr("data-marcado","marcado");	//se agrega atritubo 'data-marcado'->'marcado' a la pregunta con el numero obtenido
+			$("#"+numeroPregunta+"").data("marcado","marcado");			//a veces el el metodo .attr() no vasta, asi que tambien usamos .data()
+			console.log($(this).val());
+		}else{
+			console.log("vacio");
+		}
+	});
+
 	//Evento de boton para guardar los datos de la encuesta
 	$('#cerrar-session').click(function(){
+		//para guardar las respuestas en la bd debe cumplir dos condicione:
+		//	-que el atributo data-seleccionado -> true
+		// 	-que el atributo data-marcado -> marcado
 
+		/*
 		$(".grupo-alternativas li label[data-seleccionado=true], .grupo-alternativas-pregunta-simple li label[data-seleccionado=true], .grupo-alternativas-pregunta-multiple li label[data-seleccionado=true]").each(function(){
 			$(this).css("color","blue");
 			var numeroPregunta = $(this).data('pregunta');
@@ -213,6 +252,59 @@ $(document).ready(function () {
 		        });
 			}
 		});
+		*/
+	});
+
+	$('#boton-guardar-respuestas').click(function(){
+		var pc = ""; var sc = ""; var tc = ""; var cc = "";
+		//Primer caso: verificar que todas las preguntas de alternativa simple esten marcadas
+		$('.pregunta-alternativa-simple').each(function(){
+			var marcado = $(this).data("marcado");
+			if(marcado == "nomarcado"){
+				console.log($(this).attr("id"));
+				pc = pc + " - "+$(this).attr("id");
+			}
+		});
+		//Segundo caso: verificar que todas las preguntas de alternativa multiple esten marcadas
+		$('.pregunta-alternativa-multiple, .pregunta-adicional-alternativa-multiple').each(function(){
+			var marcado = $(this).data("marcado");
+			if(marcado == "nomarcado"){
+				console.log($(this).attr("id"));
+				sc = sc + " - "+$(this).attr("id");
+			}
+		});
+
+		//Tercer caso: verificar que todas las preguntas compuestas esten marcadas
+		$('.pregunta-compuesta').each(function(){
+			var marcado = $(this).data("marcado");
+			if(marcado == "nomarcado"){
+				console.log($(this).attr("id"));
+				tc = tc + " - "+$(this).attr("id");
+			}
+		});
+
+		//Cuarto caso: verificar que las preguntas de respuesta tipeada esten respondidas
+		$('.pregunta-respuesta-tipeada').each(function(){
+			var marcado = $(this).data("marcado");
+			if(marcado == "nomarcado"){
+				console.log($(this).attr("id"));
+				cc = cc + " - "+$(this).attr("id");
+			}
+		});
+
+		if(pc !== "" || sc !== "" || tc !== "" || cc !== ""){
+			$('#modalPreguntasFaltantes').modal('show');
+			$('#lista-preguntas-sin-respuesta').append("<p>"+pc+"</p><br>");
+			$('#lista-preguntas-sin-respuesta').append("<p>"+sc+"</p><br>");
+			$('#lista-preguntas-sin-respuesta').append("<p>"+tc+"</p><br>");
+			$('#lista-preguntas-sin-respuesta').append("<p>"+cc+"</p><br>");
+		}else{
+			console.log("Todas las preguntas estan respindaidas");
+		}
+	});
+
+	$('#btn-aceptar-modal').click(function(){
+		$('#lista-preguntas-sin-respuesta').empty();	//se limopia contenedor de preguntas sin responder
 	});
 
 	$("#botonListar").click(function(){

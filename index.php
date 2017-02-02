@@ -24,7 +24,7 @@
 		?>
 		<!--<button id="boton-guardar-respuestas">Guardar respuestas</button>-->
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary btn-lg" id="boton-guardar-respuestas" data-toggle="modal" data-target="#myModal">
+		<button type="button" class="btn btn-primary btn-lg" id="boton-guardar-respuestas">
 			Guardar Respuestas
 		</button>
 
@@ -47,6 +47,24 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 						<a href="cerrarSesion.php"><button style="background-color: #990100;border: 1px solid #990100" type="button" class="btn btn-primary" id="cerrar-session">Aceptar</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade bs-example-modal-sm" id="modalPreguntasFaltantes" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div style="background-color: #990100;color: white" class="modal-header">
+						<button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 style="text-align: center;" class="modal-title" id="myModalLabel">Mensaje de Administrador.</h4>
+					</div>
+					<div class="modal-body">
+						<div style="text-align: center; font-weight: 700" >¡Preguntas sin respuesta!</div>
+						<div style=" text-align: center; margin-top: 20px;" id="lista-preguntas-sin-respuesta"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id = "btn-aceptar-modal" data-dismiss="modal">Aceptar</button>
 					</div>
 				</div>
 			</div>

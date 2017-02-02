@@ -1,5 +1,5 @@
 <div class="preguntas">
-	<div class="pregunta-alternativa-simple" id="p1">
+	<div class="pregunta-alternativa-simple" id="p1" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">1. ¿Al egresar de la carrera que tan preparado se sintió para ejercer la profesión?</label>
 		</div>
@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p2">
+	<div class="pregunta-alternativa-simple" id="p2" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">2. ¿Cuál fue su percepción sobre el desempeño de los docentes de la Facultad de Estomatología al egresar?</label>
 		</div>
@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-multiple" id="p3">
+	<div class="pregunta-alternativa-multiple" id="p3" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">3. ¿Cuál es el área de interés para su capacitación profesional? (Puede marcar más de una opción)</label>
 		</div>
@@ -53,7 +53,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p4">
+	<div class="pregunta-alternativa-simple" id="p4" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">4. ¿Usted tiene intención de emigrar</label>
 		</div>
@@ -65,7 +65,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p5">
+	<div class="pregunta-alternativa-simple" id="p5" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">5. ¿Usted volvería a seleccionar la misma carrera?</label>
 		</div>
@@ -76,7 +76,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-alternativa-simple" id="p6">
+	<div class="pregunta-alternativa-simple" id="p6" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">6. ¿Usted volvería a elegir la misma universidad?</label>
 		</div>
@@ -87,7 +87,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pregunta-compuesta" id="p7">
+	<div class="pregunta-compuesta" id="p7" data-marcado="nomarcado">
 		<div class="enunciado">
 			<label for="">7. ¿Usted está titulado?</label>
 		</div>
@@ -98,7 +98,7 @@
 			</ul>
 		</div>
 
-		<div class="pregunta-adicional" id="p7-1" data-head="b">
+		<div class="pregunta-adicional-tipeada" id="p7-1" data-head="b">
 			<div class="enunciado">
 				<label for="">Explique a continuación el motivo por el cuál no se tituló y de por terminada la encuesta.</label>
 			</div>
@@ -144,7 +144,7 @@
 				</ul>
 			</div>
 
-			<div class="pregunta-adicional" id="p9-1" data-head="b">
+			<div class="pregunta-adicional-tipeada" id="p9-1" data-head="b">
 				<div class="enunciado">
 					<label for="">¿Cuál es el motivo por el que no ejerce la profesión?</label>
 				</div>
@@ -179,7 +179,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="pregunta-alternativa-simple" id="p12">
+		<div class="pregunta-alternativa-simple" id="p12"> 
 			<div class="enunciado">
 				<label for="">12. Actualmente su estado laboral como cirujano dentista es:</label>
 			</div>
@@ -261,7 +261,7 @@
 		</div>
 		<div class="pregunta-respuesta-tipeada" id="p18">
 			<div class="enunciado">
-				<label for="">18. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
+				<label for="">18. En la actualidad ¿Cuántas horas al día dedica al ejercicio de la profesion?</label>
 			</div>
 			<div class="respuesta-tipeada">
 				<input type="number" step="any" data-pregunta="p18" placeholder="50">
@@ -269,10 +269,10 @@
 		</div>
 		<div class="pregunta-respuesta-tipeada" id="p19">
 			<div class="enunciado">
-				<label for="">19. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista? (Ingrese su respuesta en números. Pueden ser enteros o decimales)</label>
+				<label for="">19. ¿Cuál es su ingreso medio recibido mensualmente como cirujano dentista?</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="number" step="any" data-pregunta="p19" placeholder="50">
+				<input type="number" step="any" data-pregunta="p19" placeholder="1250.5">
 			</div>
 		</div>
 		<div class="pregunta-alternativa-simple" id="p20">
