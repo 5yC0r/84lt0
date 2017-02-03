@@ -87,10 +87,13 @@
 			</ul>
 		</div>
 	</div>
+
 	<div class="pregunta-compuesta" id="p7" data-marcado="nomarcado">
+
 		<div class="enunciado">
 			<label for="">7. ¿Usted está titulado?</label>
 		</div>
+
 		<div class="grupo-alternativas">
 			<ul>
 				<li><label for="" class="alternativa" data-pregunta="p7" data-indice="a">a) Si</label></li>
@@ -98,14 +101,64 @@
 			</ul>
 		</div>
 
-		<div class="pregunta-adicional-tipeada" id="p7-1" data-head="b">
+		<div class="pregunta-adicional-compuesta" id="p7-1" data-head="a">
+			<div class="enunciado">
+				<label for="">A Febrero de 2017. ¿Usted se encuentra habilitado en su colegio profesional?.</label>
+			</div>
+			<div class="grupo-alternativas">
+				<ul>
+					<li><label for="" class="alternativa" data-pregunta="p7-1" data-indice="a">a) Si.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p7-1" data-indice="b">b) No.</label></li>
+				</ul>
+			</div>
+
+			<div class="pregunta-biadicional-alternativa-simple" id="p7-1-1" data-head="a">
+				<div class="enunciado">
+					<label for="">Seleccione en que colegio profesional se encuentra habilitado.</label>
+				</div>
+				<div class="">
+					<select name="" id="">
+						<option value="">Seleccione</option>
+						<option value="">Amazonas</option>
+						<option value="">Apurímac</option>
+						<option value="">Arequipa</option>
+						<option value="">Ayacucho</option>
+						<option value="">Cajamarca</option>
+						<option value="">Callao</option>
+						<option value="">Chimbote</option>
+						<option value="">Cuzco</option>
+						<option value="">Huancavelica</option>
+						<option value="">Huánuco</option>
+						<option value="">Huaraz</option>
+						<option value="">Ica</option>
+						<option value="">Junín</option>
+						<option value="">La Libertad</option>
+						<option value="">Lambayeque</option>
+						<option value="">Lima</option>
+						<option value="">Loreto</option>
+						<option value="">Madre de Dios</option>
+						<option value="">Moquegua</option>
+						<option value="">Piura</option>
+						<option value="">Pasco</option>
+						<option value="">Puno</option>
+						<option value="">San Martin</option>
+						<option value="">Tacna</option>
+						<option value="">Tumbes</option>
+						<option value="">Ucayali</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="pregunta-adicional-tipeada" id="p7-2" data-head="b">
 			<div class="enunciado">
 				<label for="">Explique a continuación el motivo por el cuál no se tituló y de por terminada la encuesta.</label>
 			</div>
 			<div class="respuesta-tipeada">
-				<input type="text" data-pregunta="p7-1" value="" size="90">
+				<input type="text" data-pregunta="p7-2" value="" size="90">
 			</div>
 		</div>
+
 	</div>
 
 	<div id="preguntas-titulado">
@@ -153,11 +206,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="pregunta-alternativa-multiple" id="p10">
+		<div class="pregunta-compuesta" id="p10">
 			<div class="enunciado">
 				<label for="">10. ¿Cuál es el area del ejercicio profesional que desempeña? (Puede marcar más de una opción)</label>
 			</div>
-			<div class="grupo-alternativas-pregunta-multiple">
+			<div class="grupo-alternativas">
 				<ul>
 					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="a">a) Asistencial.</label></li>
 					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="b">b) Docencia.</label></li>
@@ -166,6 +219,31 @@
 					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="e">e) Administración.</label></li>
 					<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10" data-indice="f">f) Promoción de la salud.</label></li>
 				</ul>
+			</div>
+			
+			<div class="pregunta-adicional-alternativa-multiple" id="p10-1" data-head="a">
+				<div class="enunciado">
+					<label for="">¿En qué centro de salud se desempeña en el área asistencial? (puede marcar más de una opción)</label>
+				</div>
+				<div class="grupo-alternativas-pregunta-multiple">
+					<ul>
+						<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10-1" data-indice="a">a) Minsa.</label></li>
+						<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10-1" data-indice="b">b) Essalud.</label></li>
+						<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10-1" data-indice="c">c) Consultorio Odontológico.</label></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="pregunta-adicional-alternativa-multiple" id="p10-2" data-head="b">
+				<div class="enunciado">
+					<label for="">¿En qué centro se desempeña como docente? (puede marcar más de una opción)</label>
+				</div>
+				<div class="grupo-alternativas-pregunta-multiple">
+					<ul>
+						<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10-2" data-indice="a">a) Universidad pública.</label></li>
+						<li><label for="" class="alternativa" data-seleccionado="false" data-pregunta="p10-2" data-indice="b">b) Universidad privada.</label></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div class="pregunta-alternativa-simple" id="p11">
@@ -203,6 +281,7 @@
 					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="b">b) Entre 1 y 2 años.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="c">c) Entre 2 y 3 años.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="d">d) Más de 3 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p13" data-indice="e">e) No realicé labores como trabajador dependiente.</label></li>
 				</ul>
 			</div>
 		</div>
@@ -244,6 +323,7 @@
 					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="b">b) Entre 1 y 2 años.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="c">c) Entre 2 y 3 años.</label></li>
 					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="d">d) Más de 3 años.</label></li>
+					<li><label for="" class="alternativa" data-pregunta="p16" data-indice="e">e) No realicé labores como trabajador independiente.</label></li>
 				</ul>
 			</div>
 		</div>
